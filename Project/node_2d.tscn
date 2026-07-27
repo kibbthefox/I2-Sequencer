@@ -1,0 +1,285 @@
+[gd_scene load_steps=14 format=3 uid="uid://dcwopsgo0bylm"]
+
+[ext_resource type="Texture2D" uid="uid://8n3w8wobra60" path="res://New Piskel-1.png.png" id="1_4d7sh"]
+[ext_resource type="Script" uid="uid://dmeqedowajwkr" path="res://audio_stream_player.gd" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://qdkq6ewb070s" path="res://icon.svg" id="2_epypp"]
+[ext_resource type="Script" uid="uid://h10nhvspm8v6" path="res://icon.gd" id="3_0hol4"]
+[ext_resource type="Script" uid="uid://cabisk6b7ypxl" path="res://icon2.gd" id="4_0hol4"]
+[ext_resource type="Texture2D" uid="uid://c2sledpqh0e7h" path="res://Buttons/button_0.png" id="6_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://sy3dnvvybtlm" path="res://Buttons/button_1.png" id="7_hqns4"]
+[ext_resource type="Texture2D" uid="uid://b3qwwgx6xl34b" path="res://Buttons/button_2.png" id="8_x0ka3"]
+[ext_resource type="Texture2D" uid="uid://b7igagf73l6xs" path="res://Buttons/button_3.png" id="9_0h7mo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
+size = Vector2(74, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(133.333, 131.556)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nr8wp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ir8iy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hqns4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x0ka3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0h7mo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2bti"]
+size = Vector2(96, 96)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="blue bg" type="Sprite2D" parent="."]
+position = Vector2(569, 322)
+scale = Vector2(1.46377, 1.60185)
+texture = ExtResource("1_4d7sh")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource("1_wtcfe")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(147, 709)
+scale = Vector2(1.5, 1.5)
+
+[node name="Icon" type="Sprite2D" parent="Node2D"]
+position = Vector2(61.3333, 126.667)
+scale = Vector2(0.5625, 0.5625)
+texture = ExtResource("2_epypp")
+
+[node name="Area2D" type="Area2D" parent="Node2D/Icon"]
+position = Vector2(-110.222, -92.4444)
+scale = Vector2(1.77778, 1.77778)
+script = ExtResource("3_0hol4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Icon/Area2D"]
+position = Vector2(63.3331, 51.9999)
+shape = SubResource("RectangleShape2D_epypp")
+
+[node name="Icon2" type="Sprite2D" parent="Node2D"]
+position = Vector2(150.333, 127.667)
+scale = Vector2(0.5625, 0.5625)
+texture = ExtResource("2_epypp")
+
+[node name="Area2D" type="Area2D" parent="Node2D/Icon2"]
+script = ExtResource("4_0hol4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Icon2/Area2D"]
+position = Vector2(0.888885, -1.77778)
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="Icon3" type="Sprite2D" parent="Node2D"]
+position = Vector2(237.333, 127.667)
+scale = Vector2(0.5625, 0.5625)
+texture = ExtResource("2_epypp")
+
+[node name="Icon4" type="Sprite2D" parent="Node2D"]
+position = Vector2(326.333, 128.667)
+scale = Vector2(0.5625, 0.5625)
+texture = ExtResource("2_epypp")
+
+[node name="Icon5" type="Sprite2D" parent="Node2D"]
+position = Vector2(416.333, 128.667)
+scale = Vector2(0.5625, 0.5625)
+texture = ExtResource("2_epypp")
+
+[node name="Icon6" type="Sprite2D" parent="Node2D"]
+position = Vector2(505.333, 129.667)
+scale = Vector2(0.5625, 0.5625)
+texture = ExtResource("2_epypp")
+
+[node name="Icon7" type="Sprite2D" parent="Node2D"]
+position = Vector2(592.333, 129.667)
+scale = Vector2(0.5625, 0.5625)
+texture = ExtResource("2_epypp")
+
+[node name="Icon8" type="Sprite2D" parent="Node2D"]
+position = Vector2(681.333, 130.667)
+scale = Vector2(0.5625, 0.5625)
+texture = ExtResource("2_epypp")
+
+[node name="Icon9" type="Sprite2D" parent="Node2D"]
+position = Vector2(61.3333, 209.667)
+scale = Vector2(0.5625, 0.5625)
+texture = ExtResource("2_epypp")
+
+[node name="Icon10" type="Sprite2D" parent="Node2D"]
+position = Vector2(150.333, 210.667)
+scale = Vector2(0.5625, 0.5625)
+texture = ExtResource("2_epypp")
+
+[node name="Icon11" type="Sprite2D" parent="Node2D"]
+position = Vector2(237.333, 210.667)
+scale = Vector2(0.5625, 0.5625)
+texture = ExtResource("2_epypp")
+
+[node name="Icon12" type="Sprite2D" parent="Node2D"]
+position = Vector2(326.333, 211.667)
+scale = Vector2(0.5625, 0.5625)
+texture = ExtResource("2_epypp")
+
+[node name="Icon13" type="Sprite2D" parent="Node2D"]
+position = Vector2(416.333, 211.667)
+scale = Vector2(0.5625, 0.5625)
+texture = ExtResource("2_epypp")
+
+[node name="Icon14" type="Sprite2D" parent="Node2D"]
+position = Vector2(505.333, 212.667)
+scale = Vector2(0.5625, 0.5625)
+texture = ExtResource("2_epypp")
+
+[node name="Icon15" type="Sprite2D" parent="Node2D"]
+position = Vector2(592.333, 212.667)
+scale = Vector2(0.5625, 0.5625)
+texture = ExtResource("2_epypp")
+
+[node name="Icon16" type="Sprite2D" parent="Node2D"]
+position = Vector2(681.333, 213.667)
+scale = Vector2(0.5625, 0.5625)
+texture = ExtResource("2_epypp")
+
+[node name="sequence buttons" type="Node2D" parent="."]
+position = Vector2(576, 200)
+
+[node name="1" type="AnimatedSprite2D" parent="sequence buttons"]
+position = Vector2(-399, -65)
+sprite_frames = SubResource("SpriteFrames_nr8wp")
+
+[node name="Area2D" type="Area2D" parent="sequence buttons/1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/1/Area2D"]
+shape = SubResource("RectangleShape2D_d2bti")
+
+[node name="2" type="AnimatedSprite2D" parent="sequence buttons"]
+position = Vector2(-285, -65)
+sprite_frames = SubResource("SpriteFrames_nr8wp")
+
+[node name="Area2D" type="Area2D" parent="sequence buttons/2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/2/Area2D"]
+
+[node name="3" type="AnimatedSprite2D" parent="sequence buttons"]
+position = Vector2(-171, -65)
+sprite_frames = SubResource("SpriteFrames_nr8wp")
+
+[node name="Area2D" type="Area2D" parent="sequence buttons/3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/3/Area2D"]
+
+[node name="4" type="AnimatedSprite2D" parent="sequence buttons"]
+position = Vector2(-57, -65)
+sprite_frames = SubResource("SpriteFrames_nr8wp")
+
+[node name="Area2D" type="Area2D" parent="sequence buttons/4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/4/Area2D"]
+
+[node name="5" type="AnimatedSprite2D" parent="sequence buttons"]
+position = Vector2(57, -65)
+sprite_frames = SubResource("SpriteFrames_nr8wp")
+
+[node name="Area2D" type="Area2D" parent="sequence buttons/5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/5/Area2D"]
+
+[node name="6" type="AnimatedSprite2D" parent="sequence buttons"]
+position = Vector2(171, -65)
+sprite_frames = SubResource("SpriteFrames_nr8wp")
+
+[node name="Area2D" type="Area2D" parent="sequence buttons/6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/6/Area2D"]
+
+[node name="7" type="AnimatedSprite2D" parent="sequence buttons"]
+position = Vector2(285, -65)
+sprite_frames = SubResource("SpriteFrames_nr8wp")
+
+[node name="Area2D" type="Area2D" parent="sequence buttons/7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/7/Area2D"]
+
+[node name="8" type="AnimatedSprite2D" parent="sequence buttons"]
+position = Vector2(399, -65)
+sprite_frames = SubResource("SpriteFrames_nr8wp")
+
+[node name="Area2D" type="Area2D" parent="sequence buttons/8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/8/Area2D"]
+
+[node name="9" type="AnimatedSprite2D" parent="sequence buttons"]
+position = Vector2(-399, 67)
+sprite_frames = SubResource("SpriteFrames_nr8wp")
+
+[node name="Area2D" type="Area2D" parent="sequence buttons/9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/9/Area2D"]
+
+[node name="10" type="AnimatedSprite2D" parent="sequence buttons"]
+position = Vector2(-285, 67)
+sprite_frames = SubResource("SpriteFrames_nr8wp")
+
+[node name="Area2D" type="Area2D" parent="sequence buttons/10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/10/Area2D"]
+
+[node name="11" type="AnimatedSprite2D" parent="sequence buttons"]
+position = Vector2(-171, 67)
+sprite_frames = SubResource("SpriteFrames_nr8wp")
+
+[node name="Area2D" type="Area2D" parent="sequence buttons/11"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/11/Area2D"]
+
+[node name="12" type="AnimatedSprite2D" parent="sequence buttons"]
+position = Vector2(-57, 67)
+sprite_frames = SubResource("SpriteFrames_nr8wp")
+
+[node name="Area2D" type="Area2D" parent="sequence buttons/12"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/12/Area2D"]
+
+[node name="13" type="AnimatedSprite2D" parent="sequence buttons"]
+position = Vector2(57, 67)
+sprite_frames = SubResource("SpriteFrames_nr8wp")
+
+[node name="Area2D" type="Area2D" parent="sequence buttons/13"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/13/Area2D"]
+
+[node name="14" type="AnimatedSprite2D" parent="sequence buttons"]
+position = Vector2(171, 67)
+sprite_frames = SubResource("SpriteFrames_nr8wp")
+
+[node name="Area2D" type="Area2D" parent="sequence buttons/14"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/14/Area2D"]
+
+[node name="15" type="AnimatedSprite2D" parent="sequence buttons"]
+position = Vector2(285, 67)
+sprite_frames = SubResource("SpriteFrames_nr8wp")
+
+[node name="Area2D" type="Area2D" parent="sequence buttons/15"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/15/Area2D"]
+
+[node name="16" type="AnimatedSprite2D" parent="sequence buttons"]
+position = Vector2(399, 67)
+sprite_frames = SubResource("SpriteFrames_nr8wp")
+
+[node name="Area2D" type="Area2D" parent="sequence buttons/16"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/16/Area2D"]
+
+[connection signal="input_event" from="Node2D/Icon/Area2D" to="Node2D/Icon/Area2D" method="_on_input_event"]
+[connection signal="input_event" from="Node2D/Icon2/Area2D" to="Node2D/Icon2/Area2D" method="_on_input_event"]
