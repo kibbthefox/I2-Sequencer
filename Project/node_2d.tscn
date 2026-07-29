@@ -1,20 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://dcwopsgo0bylm"]
+[gd_scene load_steps=27 format=3 uid="uid://dcwopsgo0bylm"]
 
 [ext_resource type="Texture2D" uid="uid://8n3w8wobra60" path="res://New Piskel-1.png.png" id="1_4d7sh"]
-[ext_resource type="Script" uid="uid://dmeqedowajwkr" path="res://audio_stream_player.gd" id="1_wtcfe"]
-[ext_resource type="Texture2D" uid="uid://qdkq6ewb070s" path="res://icon.svg" id="2_epypp"]
-[ext_resource type="Script" uid="uid://h10nhvspm8v6" path="res://icon.gd" id="3_0hol4"]
-[ext_resource type="Script" uid="uid://cabisk6b7ypxl" path="res://icon2.gd" id="4_0hol4"]
+[ext_resource type="Script" uid="uid://cj4nuq3kiir86" path="res://Interface.gd" id="1_hqns4"]
+[ext_resource type="AudioStream" uid="uid://cqbs1vucod0io" path="res://C5.wav" id="3_x0ka3"]
+[ext_resource type="Script" uid="uid://dptc08xmrakhl" path="res://normal_audio.gd" id="4_hqns4"]
 [ext_resource type="Texture2D" uid="uid://c2sledpqh0e7h" path="res://Buttons/button_0.png" id="6_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://sy3dnvvybtlm" path="res://Buttons/button_1.png" id="7_hqns4"]
 [ext_resource type="Texture2D" uid="uid://b3qwwgx6xl34b" path="res://Buttons/button_2.png" id="8_x0ka3"]
 [ext_resource type="Texture2D" uid="uid://b7igagf73l6xs" path="res://Buttons/button_3.png" id="9_0h7mo"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
-size = Vector2(74, 73)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
-size = Vector2(133.333, 131.556)
+[ext_resource type="Script" uid="uid://dbl4t8cjpso0d" path="res://1.gd" id="12_x0ka3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nr8wp"]
 animations = [{
@@ -39,247 +33,241 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2bti"]
 size = Vector2(96, 96)
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
+size = Vector2(96, 96)
 
-[node name="blue bg" type="Sprite2D" parent="."]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ir8iy"]
+size = Vector2(96, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqns4"]
+size = Vector2(96, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0ka3"]
+size = Vector2(96, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0h7mo"]
+size = Vector2(96, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nr8wp"]
+size = Vector2(96, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ta5nu"]
+size = Vector2(96, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flf07"]
+size = Vector2(96, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k73cj"]
+size = Vector2(96, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjqkl"]
+size = Vector2(96, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fs4d3"]
+size = Vector2(96, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vxoj"]
+size = Vector2(96, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ei405"]
+size = Vector2(96, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8dv2"]
+size = Vector2(96, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nhjh"]
+size = Vector2(96, 96)
+
+[node name="Interface" type="Node2D"]
+script = ExtResource("1_hqns4")
+
+[node name="BG Blue" type="Sprite2D" parent="."]
 position = Vector2(569, 322)
 scale = Vector2(1.46377, 1.60185)
 texture = ExtResource("1_4d7sh")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-script = ExtResource("1_wtcfe")
+[node name="NormalAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_x0ka3")
+script = ExtResource("4_hqns4")
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(147, 709)
-scale = Vector2(1.5, 1.5)
+[node name="DualAudio" type="AudioStreamPlayer" parent="."]
 
-[node name="Icon" type="Sprite2D" parent="Node2D"]
-position = Vector2(61.3333, 126.667)
-scale = Vector2(0.5625, 0.5625)
-texture = ExtResource("2_epypp")
-
-[node name="Area2D" type="Area2D" parent="Node2D/Icon"]
-position = Vector2(-110.222, -92.4444)
-scale = Vector2(1.77778, 1.77778)
-script = ExtResource("3_0hol4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Icon/Area2D"]
-position = Vector2(63.3331, 51.9999)
-shape = SubResource("RectangleShape2D_epypp")
-
-[node name="Icon2" type="Sprite2D" parent="Node2D"]
-position = Vector2(150.333, 127.667)
-scale = Vector2(0.5625, 0.5625)
-texture = ExtResource("2_epypp")
-
-[node name="Area2D" type="Area2D" parent="Node2D/Icon2"]
-script = ExtResource("4_0hol4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Icon2/Area2D"]
-position = Vector2(0.888885, -1.77778)
-shape = SubResource("RectangleShape2D_0hol4")
-
-[node name="Icon3" type="Sprite2D" parent="Node2D"]
-position = Vector2(237.333, 127.667)
-scale = Vector2(0.5625, 0.5625)
-texture = ExtResource("2_epypp")
-
-[node name="Icon4" type="Sprite2D" parent="Node2D"]
-position = Vector2(326.333, 128.667)
-scale = Vector2(0.5625, 0.5625)
-texture = ExtResource("2_epypp")
-
-[node name="Icon5" type="Sprite2D" parent="Node2D"]
-position = Vector2(416.333, 128.667)
-scale = Vector2(0.5625, 0.5625)
-texture = ExtResource("2_epypp")
-
-[node name="Icon6" type="Sprite2D" parent="Node2D"]
-position = Vector2(505.333, 129.667)
-scale = Vector2(0.5625, 0.5625)
-texture = ExtResource("2_epypp")
-
-[node name="Icon7" type="Sprite2D" parent="Node2D"]
-position = Vector2(592.333, 129.667)
-scale = Vector2(0.5625, 0.5625)
-texture = ExtResource("2_epypp")
-
-[node name="Icon8" type="Sprite2D" parent="Node2D"]
-position = Vector2(681.333, 130.667)
-scale = Vector2(0.5625, 0.5625)
-texture = ExtResource("2_epypp")
-
-[node name="Icon9" type="Sprite2D" parent="Node2D"]
-position = Vector2(61.3333, 209.667)
-scale = Vector2(0.5625, 0.5625)
-texture = ExtResource("2_epypp")
-
-[node name="Icon10" type="Sprite2D" parent="Node2D"]
-position = Vector2(150.333, 210.667)
-scale = Vector2(0.5625, 0.5625)
-texture = ExtResource("2_epypp")
-
-[node name="Icon11" type="Sprite2D" parent="Node2D"]
-position = Vector2(237.333, 210.667)
-scale = Vector2(0.5625, 0.5625)
-texture = ExtResource("2_epypp")
-
-[node name="Icon12" type="Sprite2D" parent="Node2D"]
-position = Vector2(326.333, 211.667)
-scale = Vector2(0.5625, 0.5625)
-texture = ExtResource("2_epypp")
-
-[node name="Icon13" type="Sprite2D" parent="Node2D"]
-position = Vector2(416.333, 211.667)
-scale = Vector2(0.5625, 0.5625)
-texture = ExtResource("2_epypp")
-
-[node name="Icon14" type="Sprite2D" parent="Node2D"]
-position = Vector2(505.333, 212.667)
-scale = Vector2(0.5625, 0.5625)
-texture = ExtResource("2_epypp")
-
-[node name="Icon15" type="Sprite2D" parent="Node2D"]
-position = Vector2(592.333, 212.667)
-scale = Vector2(0.5625, 0.5625)
-texture = ExtResource("2_epypp")
-
-[node name="Icon16" type="Sprite2D" parent="Node2D"]
-position = Vector2(681.333, 213.667)
-scale = Vector2(0.5625, 0.5625)
-texture = ExtResource("2_epypp")
-
-[node name="sequence buttons" type="Node2D" parent="."]
+[node name="Sequence Buttons" type="Node2D" parent="."]
 position = Vector2(576, 200)
 
-[node name="1" type="AnimatedSprite2D" parent="sequence buttons"]
+[node name="1" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(-399, -65)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
-[node name="Area2D" type="Area2D" parent="sequence buttons/1"]
+[node name="1" type="Area2D" parent="Sequence Buttons/1"]
+script = ExtResource("12_x0ka3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/1/Area2D"]
+[node name="1" type="CollisionShape2D" parent="Sequence Buttons/1/1"]
 shape = SubResource("RectangleShape2D_d2bti")
 
-[node name="2" type="AnimatedSprite2D" parent="sequence buttons"]
+[node name="2" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(-285, -65)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
-[node name="Area2D" type="Area2D" parent="sequence buttons/2"]
+[node name="2" type="Area2D" parent="Sequence Buttons/2"]
+script = ExtResource("12_x0ka3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/2/Area2D"]
+[node name="2" type="CollisionShape2D" parent="Sequence Buttons/2/2"]
+shape = SubResource("RectangleShape2D_4d7sh")
 
-[node name="3" type="AnimatedSprite2D" parent="sequence buttons"]
+[node name="3" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(-171, -65)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
-[node name="Area2D" type="Area2D" parent="sequence buttons/3"]
+[node name="3" type="Area2D" parent="Sequence Buttons/3"]
+script = ExtResource("12_x0ka3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/3/Area2D"]
+[node name="3" type="CollisionShape2D" parent="Sequence Buttons/3/3"]
+shape = SubResource("RectangleShape2D_ir8iy")
 
-[node name="4" type="AnimatedSprite2D" parent="sequence buttons"]
+[node name="4" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(-57, -65)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
-[node name="Area2D" type="Area2D" parent="sequence buttons/4"]
+[node name="4" type="Area2D" parent="Sequence Buttons/4"]
+script = ExtResource("12_x0ka3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/4/Area2D"]
+[node name="4" type="CollisionShape2D" parent="Sequence Buttons/4/4"]
+shape = SubResource("RectangleShape2D_hqns4")
 
-[node name="5" type="AnimatedSprite2D" parent="sequence buttons"]
+[node name="5" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(57, -65)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
-[node name="Area2D" type="Area2D" parent="sequence buttons/5"]
+[node name="5" type="Area2D" parent="Sequence Buttons/5"]
+script = ExtResource("12_x0ka3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/5/Area2D"]
+[node name="5" type="CollisionShape2D" parent="Sequence Buttons/5/5"]
+shape = SubResource("RectangleShape2D_x0ka3")
 
-[node name="6" type="AnimatedSprite2D" parent="sequence buttons"]
+[node name="6" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(171, -65)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
-[node name="Area2D" type="Area2D" parent="sequence buttons/6"]
+[node name="6" type="Area2D" parent="Sequence Buttons/6"]
+script = ExtResource("12_x0ka3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/6/Area2D"]
+[node name="6" type="CollisionShape2D" parent="Sequence Buttons/6/6"]
+shape = SubResource("RectangleShape2D_0h7mo")
 
-[node name="7" type="AnimatedSprite2D" parent="sequence buttons"]
+[node name="7" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(285, -65)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
-[node name="Area2D" type="Area2D" parent="sequence buttons/7"]
+[node name="7" type="Area2D" parent="Sequence Buttons/7"]
+script = ExtResource("12_x0ka3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/7/Area2D"]
+[node name="7" type="CollisionShape2D" parent="Sequence Buttons/7/7"]
+shape = SubResource("RectangleShape2D_nr8wp")
 
-[node name="8" type="AnimatedSprite2D" parent="sequence buttons"]
+[node name="8" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(399, -65)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
-[node name="Area2D" type="Area2D" parent="sequence buttons/8"]
+[node name="8" type="Area2D" parent="Sequence Buttons/8"]
+script = ExtResource("12_x0ka3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/8/Area2D"]
+[node name="8" type="CollisionShape2D" parent="Sequence Buttons/8/8"]
+shape = SubResource("RectangleShape2D_ta5nu")
 
-[node name="9" type="AnimatedSprite2D" parent="sequence buttons"]
+[node name="9" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(-399, 67)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
-[node name="Area2D" type="Area2D" parent="sequence buttons/9"]
+[node name="9" type="Area2D" parent="Sequence Buttons/9"]
+script = ExtResource("12_x0ka3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/9/Area2D"]
+[node name="9" type="CollisionShape2D" parent="Sequence Buttons/9/9"]
+shape = SubResource("RectangleShape2D_flf07")
 
-[node name="10" type="AnimatedSprite2D" parent="sequence buttons"]
+[node name="10" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(-285, 67)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
-[node name="Area2D" type="Area2D" parent="sequence buttons/10"]
+[node name="10" type="Area2D" parent="Sequence Buttons/10"]
+script = ExtResource("12_x0ka3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/10/Area2D"]
+[node name="10" type="CollisionShape2D" parent="Sequence Buttons/10/10"]
+shape = SubResource("RectangleShape2D_k73cj")
 
-[node name="11" type="AnimatedSprite2D" parent="sequence buttons"]
+[node name="11" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(-171, 67)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
-[node name="Area2D" type="Area2D" parent="sequence buttons/11"]
+[node name="11" type="Area2D" parent="Sequence Buttons/11"]
+script = ExtResource("12_x0ka3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/11/Area2D"]
+[node name="11" type="CollisionShape2D" parent="Sequence Buttons/11/11"]
+shape = SubResource("RectangleShape2D_rjqkl")
 
-[node name="12" type="AnimatedSprite2D" parent="sequence buttons"]
+[node name="12" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(-57, 67)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
-[node name="Area2D" type="Area2D" parent="sequence buttons/12"]
+[node name="12" type="Area2D" parent="Sequence Buttons/12"]
+script = ExtResource("12_x0ka3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/12/Area2D"]
+[node name="12" type="CollisionShape2D" parent="Sequence Buttons/12/12"]
+shape = SubResource("RectangleShape2D_fs4d3")
 
-[node name="13" type="AnimatedSprite2D" parent="sequence buttons"]
+[node name="13" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(57, 67)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
-[node name="Area2D" type="Area2D" parent="sequence buttons/13"]
+[node name="13" type="Area2D" parent="Sequence Buttons/13"]
+script = ExtResource("12_x0ka3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/13/Area2D"]
+[node name="13" type="CollisionShape2D" parent="Sequence Buttons/13/13"]
+shape = SubResource("RectangleShape2D_7vxoj")
 
-[node name="14" type="AnimatedSprite2D" parent="sequence buttons"]
+[node name="14" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(171, 67)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
-[node name="Area2D" type="Area2D" parent="sequence buttons/14"]
+[node name="14" type="Area2D" parent="Sequence Buttons/14"]
+script = ExtResource("12_x0ka3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/14/Area2D"]
+[node name="14" type="CollisionShape2D" parent="Sequence Buttons/14/14"]
+shape = SubResource("RectangleShape2D_ei405")
 
-[node name="15" type="AnimatedSprite2D" parent="sequence buttons"]
+[node name="15" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(285, 67)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
-[node name="Area2D" type="Area2D" parent="sequence buttons/15"]
+[node name="15" type="Area2D" parent="Sequence Buttons/15"]
+script = ExtResource("12_x0ka3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/15/Area2D"]
+[node name="15" type="CollisionShape2D" parent="Sequence Buttons/15/15"]
+shape = SubResource("RectangleShape2D_e8dv2")
 
-[node name="16" type="AnimatedSprite2D" parent="sequence buttons"]
+[node name="16" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(399, 67)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
-[node name="Area2D" type="Area2D" parent="sequence buttons/16"]
+[node name="16" type="Area2D" parent="Sequence Buttons/16"]
+script = ExtResource("12_x0ka3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sequence buttons/16/Area2D"]
+[node name="16" type="CollisionShape2D" parent="Sequence Buttons/16/16"]
+shape = SubResource("RectangleShape2D_2nhjh")
 
-[connection signal="input_event" from="Node2D/Icon/Area2D" to="Node2D/Icon/Area2D" method="_on_input_event"]
-[connection signal="input_event" from="Node2D/Icon2/Area2D" to="Node2D/Icon2/Area2D" method="_on_input_event"]
+[connection signal="input_event" from="Sequence Buttons/1/1" to="Sequence Buttons/1/1" method="_on_input_event"]
+[connection signal="input_event" from="Sequence Buttons/2/2" to="Sequence Buttons/2/2" method="_on_input_event"]
+[connection signal="input_event" from="Sequence Buttons/3/3" to="Sequence Buttons/3/3" method="_on_input_event"]
+[connection signal="input_event" from="Sequence Buttons/4/4" to="Sequence Buttons/4/4" method="_on_input_event"]
+[connection signal="input_event" from="Sequence Buttons/5/5" to="Sequence Buttons/5/5" method="_on_input_event"]
+[connection signal="input_event" from="Sequence Buttons/6/6" to="Sequence Buttons/6/6" method="_on_input_event"]
+[connection signal="input_event" from="Sequence Buttons/7/7" to="Sequence Buttons/7/7" method="_on_input_event"]
+[connection signal="input_event" from="Sequence Buttons/8/8" to="Sequence Buttons/8/8" method="_on_input_event"]
+[connection signal="input_event" from="Sequence Buttons/9/9" to="Sequence Buttons/9/9" method="_on_input_event"]
+[connection signal="input_event" from="Sequence Buttons/10/10" to="Sequence Buttons/10/10" method="_on_input_event"]
+[connection signal="input_event" from="Sequence Buttons/11/11" to="Sequence Buttons/11/11" method="_on_input_event"]
+[connection signal="input_event" from="Sequence Buttons/12/12" to="Sequence Buttons/12/12" method="_on_input_event"]
+[connection signal="input_event" from="Sequence Buttons/13/13" to="Sequence Buttons/13/13" method="_on_input_event"]
+[connection signal="input_event" from="Sequence Buttons/14/14" to="Sequence Buttons/14/14" method="_on_input_event"]
+[connection signal="input_event" from="Sequence Buttons/15/15" to="Sequence Buttons/15/15" method="_on_input_event"]
+[connection signal="input_event" from="Sequence Buttons/16/16" to="Sequence Buttons/16/16" method="_on_input_event"]

@@ -1,6 +1,7 @@
 extends Area2D
 
 var state:String = "sitting"
+var pitch:int = 0
 
 
 func _on_input_event(_viewport, event, _shape_idx):
@@ -11,11 +12,16 @@ func _on_input_event(_viewport, event, _shape_idx):
 
 
 func on_click():
-	GlobalVariable.selected = 1
-	if state == "sitting":
-		state = "waiting"
+	GlobalVariable.selected = int(get_parent().name)
 
 
 func _process(_delta: float) -> void:
-	if not GlobalVariable.selected == 1:
+	if not GlobalVariable.selected == int(get_parent().name):
 		state = "sitting"
+	else:
+		state = "waiting"
+	if state == "waiting" and GlobalVariable.notepressed == true:
+		GlobalVariable.selected = 0
+		pitch = GlobalVariable.latestnote
+		print(pitch)
+	
