@@ -176,7 +176,7 @@ script = ExtResource("12_x0ka3")
 shape = SubResource("RectangleShape2D_ta5nu")
 
 [node name="9" type="AnimatedSprite2D" parent="Sequence Buttons"]
-position = Vector2(-399, 67)
+position = Vector2(-399, 103)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
 [node name="9" type="Area2D" parent="Sequence Buttons/9"]
@@ -186,7 +186,7 @@ script = ExtResource("12_x0ka3")
 shape = SubResource("RectangleShape2D_flf07")
 
 [node name="10" type="AnimatedSprite2D" parent="Sequence Buttons"]
-position = Vector2(-285, 67)
+position = Vector2(-285, 103)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
 [node name="10" type="Area2D" parent="Sequence Buttons/10"]
@@ -196,7 +196,7 @@ script = ExtResource("12_x0ka3")
 shape = SubResource("RectangleShape2D_k73cj")
 
 [node name="11" type="AnimatedSprite2D" parent="Sequence Buttons"]
-position = Vector2(-171, 67)
+position = Vector2(-171, 103)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
 [node name="11" type="Area2D" parent="Sequence Buttons/11"]
@@ -206,7 +206,7 @@ script = ExtResource("12_x0ka3")
 shape = SubResource("RectangleShape2D_rjqkl")
 
 [node name="12" type="AnimatedSprite2D" parent="Sequence Buttons"]
-position = Vector2(-57, 67)
+position = Vector2(-57, 103)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
 [node name="12" type="Area2D" parent="Sequence Buttons/12"]
@@ -216,7 +216,7 @@ script = ExtResource("12_x0ka3")
 shape = SubResource("RectangleShape2D_fs4d3")
 
 [node name="13" type="AnimatedSprite2D" parent="Sequence Buttons"]
-position = Vector2(57, 67)
+position = Vector2(57, 103)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
 [node name="13" type="Area2D" parent="Sequence Buttons/13"]
@@ -226,7 +226,7 @@ script = ExtResource("12_x0ka3")
 shape = SubResource("RectangleShape2D_7vxoj")
 
 [node name="14" type="AnimatedSprite2D" parent="Sequence Buttons"]
-position = Vector2(171, 67)
+position = Vector2(171, 103)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
 [node name="14" type="Area2D" parent="Sequence Buttons/14"]
@@ -236,7 +236,7 @@ script = ExtResource("12_x0ka3")
 shape = SubResource("RectangleShape2D_ei405")
 
 [node name="15" type="AnimatedSprite2D" parent="Sequence Buttons"]
-position = Vector2(285, 67)
+position = Vector2(285, 103)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
 [node name="15" type="Area2D" parent="Sequence Buttons/15"]
@@ -246,7 +246,7 @@ script = ExtResource("12_x0ka3")
 shape = SubResource("RectangleShape2D_e8dv2")
 
 [node name="16" type="AnimatedSprite2D" parent="Sequence Buttons"]
-position = Vector2(399, 67)
+position = Vector2(399, 103)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
 [node name="16" type="Area2D" parent="Sequence Buttons/16"]

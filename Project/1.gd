@@ -1,7 +1,7 @@
 extends Area2D
 
 var state:String = "sitting"
-var pitch:int = 0
+var assignedpitch:int = 0
 
 
 func _on_input_event(_viewport, event, _shape_idx):
@@ -22,6 +22,15 @@ func _process(_delta: float) -> void:
 		state = "waiting"
 	if state == "waiting" and GlobalVariable.notepressed == true:
 		GlobalVariable.selected = 0
-		pitch = GlobalVariable.latestnote
-		print(pitch)
+		GlobalVariable.sequence[int(get_parent().name) - 1] = GlobalVariable.latestnote
+	elif state == "waiting" and Input.is_action_just_pressed("Delete"):
+		state = "sitting"
+		GlobalVariable.sequence[int(get_parent().name) - 1] = 0
+		GlobalVariable.selected = 0
+	if state == "waiting":
+		$"..".frame = 1
+	elif not (GlobalVariable.sequence[int(get_parent().name) - 1]) == 0:
+		$"..".frame = 2
+	elif state == "sitting":
+		$"..".frame = 0
 	
