@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://8n3w8wobra60" path="res://New Piskel-1.png.png" id="1_4d7sh"]
 [ext_resource type="Script" uid="uid://cj4nuq3kiir86" path="res://Interface.gd" id="1_hqns4"]
 [ext_resource type="AudioStream" uid="uid://cqbs1vucod0io" path="res://C5.wav" id="3_x0ka3"]
-[ext_resource type="Script" uid="uid://dptc08xmrakhl" path="res://normal_audio.gd" id="4_hqns4"]
+[ext_resource type="Script" uid="uid://dreco3m5753s3" path="res://oct_display.gd" id="4_4d7sh"]
 [ext_resource type="Texture2D" uid="uid://c2sledpqh0e7h" path="res://Buttons/button_0.png" id="6_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://sy3dnvvybtlm" path="res://Buttons/button_1.png" id="7_hqns4"]
 [ext_resource type="Texture2D" uid="uid://b3qwwgx6xl34b" path="res://Buttons/button_2.png" id="8_x0ka3"]
@@ -88,9 +88,40 @@ texture = ExtResource("1_4d7sh")
 
 [node name="NormalAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_x0ka3")
-script = ExtResource("4_hqns4")
 
 [node name="DualAudio" type="AudioStreamPlayer" parent="."]
+
+[node name="Play" type="Button" parent="."]
+offset_left = 718.0
+offset_top = 410.0
+offset_right = 798.0
+offset_bottom = 456.0
+text = "Play
+"
+
+[node name="Stop" type="Button" parent="."]
+offset_left = 862.0
+offset_top = 409.0
+offset_right = 942.0
+offset_bottom = 455.0
+text = "Stop
+"
+
+[node name="desc" type="RichTextLabel" parent="."]
+offset_left = 138.0
+offset_top = 448.0
+offset_right = 466.0
+offset_bottom = 582.0
+text = "Click on a step and then use MIDI or a computer keyboard to input notes! Use the delete key on your keyboard to remove the notes. Use - and + to change the octave on your keyboard."
+
+[node name="OctDisplay" type="RichTextLabel" parent="."]
+offset_left = 711.0
+offset_top = 494.0
+offset_right = 1050.0
+offset_bottom = 569.0
+theme_override_font_sizes/normal_font_size = 35
+text = "Keyboard Oct: #"
+script = ExtResource("4_4d7sh")
 
 [node name="Sequence Buttons" type="Node2D" parent="."]
 position = Vector2(576, 200)
@@ -255,6 +286,8 @@ script = ExtResource("12_x0ka3")
 [node name="16" type="CollisionShape2D" parent="Sequence Buttons/16/16"]
 shape = SubResource("RectangleShape2D_2nhjh")
 
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Stop" to="." method="_on_stop_pressed"]
 [connection signal="input_event" from="Sequence Buttons/1/1" to="Sequence Buttons/1/1" method="_on_input_event"]
 [connection signal="input_event" from="Sequence Buttons/2/2" to="Sequence Buttons/2/2" method="_on_input_event"]
 [connection signal="input_event" from="Sequence Buttons/3/3" to="Sequence Buttons/3/3" method="_on_input_event"]
