@@ -1,14 +1,22 @@
-[gd_scene load_steps=27 format=3 uid="uid://dcwopsgo0bylm"]
+[gd_scene load_steps=33 format=3 uid="uid://dcwopsgo0bylm"]
 
 [ext_resource type="Texture2D" uid="uid://8n3w8wobra60" path="res://New Piskel-1.png.png" id="1_4d7sh"]
 [ext_resource type="Script" uid="uid://cj4nuq3kiir86" path="res://Interface.gd" id="1_hqns4"]
+[ext_resource type="FontFile" uid="uid://yopnx4emx1ke" path="res://Assets/Font/fs-pixel-sans-unicode-regular.ttf" id="3_ir8iy"]
 [ext_resource type="AudioStream" uid="uid://cqbs1vucod0io" path="res://C5.wav" id="3_x0ka3"]
 [ext_resource type="Script" uid="uid://dreco3m5753s3" path="res://oct_display.gd" id="4_4d7sh"]
+[ext_resource type="Texture2D" uid="uid://cfvxh4emh1nk0" path="res://Assets/playpause/playing.png" id="6_0h7mo"]
 [ext_resource type="Texture2D" uid="uid://c2sledpqh0e7h" path="res://Buttons/button_0.png" id="6_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://sy3dnvvybtlm" path="res://Buttons/button_1.png" id="7_hqns4"]
+[ext_resource type="Texture2D" uid="uid://c1fgkd3oo7awt" path="res://Assets/playpause/paused.png" id="7_nr8wp"]
 [ext_resource type="Texture2D" uid="uid://b3qwwgx6xl34b" path="res://Buttons/button_2.png" id="8_x0ka3"]
 [ext_resource type="Texture2D" uid="uid://b7igagf73l6xs" path="res://Buttons/button_3.png" id="9_0h7mo"]
+[ext_resource type="Script" uid="uid://j31qtwiuce5d" path="res://notedisplays.gd" id="11_hqns4"]
 [ext_resource type="Script" uid="uid://dbl4t8cjpso0d" path="res://1.gd" id="12_x0ka3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0h7mo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nr8wp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nr8wp"]
 animations = [{
@@ -82,9 +90,18 @@ size = Vector2(96, 96)
 script = ExtResource("1_hqns4")
 
 [node name="BG Blue" type="Sprite2D" parent="."]
-position = Vector2(569, 322)
-scale = Vector2(1.46377, 1.60185)
+position = Vector2(576, 261)
+scale = Vector2(1.78623, 2.11343)
 texture = ExtResource("1_4d7sh")
+
+[node name="Title" type="RichTextLabel" parent="."]
+offset_right = 1152.0
+offset_bottom = 113.0
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 112
+bbcode_enabled = true
+text = "I2 Sequencer"
+horizontal_alignment = 1
 
 [node name="NormalAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_x0ka3")
@@ -92,39 +109,47 @@ stream = ExtResource("3_x0ka3")
 [node name="DualAudio" type="AudioStreamPlayer" parent="."]
 
 [node name="Play" type="Button" parent="."]
-offset_left = 718.0
-offset_top = 410.0
-offset_right = 798.0
-offset_bottom = 456.0
-text = "Play
-"
+offset_left = 729.0
+offset_top = 435.0
+offset_right = 825.0
+offset_bottom = 531.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_0h7mo")
+icon = ExtResource("6_0h7mo")
+flat = true
+clip_text = true
+icon_alignment = 1
 
 [node name="Stop" type="Button" parent="."]
-offset_left = 862.0
-offset_top = 409.0
-offset_right = 942.0
-offset_bottom = 455.0
-text = "Stop
-"
+offset_left = 835.0
+offset_top = 435.0
+offset_right = 931.0
+offset_bottom = 531.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_nr8wp")
+icon = ExtResource("7_nr8wp")
+flat = true
+clip_text = true
+icon_alignment = 1
 
 [node name="desc" type="RichTextLabel" parent="."]
-offset_left = 138.0
-offset_top = 448.0
-offset_right = 466.0
-offset_bottom = 582.0
+offset_left = 280.0
+offset_top = 478.0
+offset_right = 608.0
+offset_bottom = 612.0
 text = "Click on a step and then use MIDI or a computer keyboard to input notes! Use the delete key on your keyboard to remove the notes. Use - and + to change the octave on your keyboard."
 
 [node name="OctDisplay" type="RichTextLabel" parent="."]
 offset_left = 711.0
-offset_top = 494.0
+offset_top = 551.0
 offset_right = 1050.0
-offset_bottom = 569.0
+offset_bottom = 626.0
 theme_override_font_sizes/normal_font_size = 35
 text = "Keyboard Oct: #"
 script = ExtResource("4_4d7sh")
 
 [node name="Sequence Buttons" type="Node2D" parent="."]
-position = Vector2(576, 200)
+position = Vector2(576, 257)
 
 [node name="1" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(-399, -65)
@@ -136,6 +161,17 @@ script = ExtResource("12_x0ka3")
 [node name="1" type="CollisionShape2D" parent="Sequence Buttons/1/1"]
 shape = SubResource("RectangleShape2D_d2bti")
 
+[node name="1t" type="RichTextLabel" parent="Sequence Buttons/1"]
+offset_left = -48.0
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 90.0
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 32
+text = "--"
+horizontal_alignment = 1
+script = ExtResource("11_hqns4")
+
 [node name="2" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(-285, -65)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
@@ -146,15 +182,39 @@ script = ExtResource("12_x0ka3")
 [node name="2" type="CollisionShape2D" parent="Sequence Buttons/2/2"]
 shape = SubResource("RectangleShape2D_4d7sh")
 
+[node name="2t" type="RichTextLabel" parent="Sequence Buttons/2"]
+offset_left = -48.0
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 90.0
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 32
+text = "--"
+horizontal_alignment = 1
+script = ExtResource("11_hqns4")
+
 [node name="3" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(-171, -65)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
 [node name="3" type="Area2D" parent="Sequence Buttons/3"]
+position = Vector2(-1, 0)
 script = ExtResource("12_x0ka3")
 
 [node name="3" type="CollisionShape2D" parent="Sequence Buttons/3/3"]
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_ir8iy")
+
+[node name="3t" type="RichTextLabel" parent="Sequence Buttons/3"]
+offset_left = -48.0
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 90.0
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 32
+text = "--"
+horizontal_alignment = 1
+script = ExtResource("11_hqns4")
 
 [node name="4" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(-57, -65)
@@ -166,6 +226,17 @@ script = ExtResource("12_x0ka3")
 [node name="4" type="CollisionShape2D" parent="Sequence Buttons/4/4"]
 shape = SubResource("RectangleShape2D_hqns4")
 
+[node name="4t" type="RichTextLabel" parent="Sequence Buttons/4"]
+offset_left = -48.0
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 90.0
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 32
+text = "--"
+horizontal_alignment = 1
+script = ExtResource("11_hqns4")
+
 [node name="5" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(57, -65)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
@@ -175,6 +246,17 @@ script = ExtResource("12_x0ka3")
 
 [node name="5" type="CollisionShape2D" parent="Sequence Buttons/5/5"]
 shape = SubResource("RectangleShape2D_x0ka3")
+
+[node name="5t" type="RichTextLabel" parent="Sequence Buttons/5"]
+offset_left = -48.0
+offset_top = 49.0
+offset_right = 48.0
+offset_bottom = 91.0
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 32
+text = "--"
+horizontal_alignment = 1
+script = ExtResource("11_hqns4")
 
 [node name="6" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(171, -65)
@@ -186,6 +268,17 @@ script = ExtResource("12_x0ka3")
 [node name="6" type="CollisionShape2D" parent="Sequence Buttons/6/6"]
 shape = SubResource("RectangleShape2D_0h7mo")
 
+[node name="6t" type="RichTextLabel" parent="Sequence Buttons/6"]
+offset_left = -48.0
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 90.0
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 32
+text = "--"
+horizontal_alignment = 1
+script = ExtResource("11_hqns4")
+
 [node name="7" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(285, -65)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
@@ -195,6 +288,17 @@ script = ExtResource("12_x0ka3")
 
 [node name="7" type="CollisionShape2D" parent="Sequence Buttons/7/7"]
 shape = SubResource("RectangleShape2D_nr8wp")
+
+[node name="7t" type="RichTextLabel" parent="Sequence Buttons/7"]
+offset_left = -48.0
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 90.0
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 32
+text = "--"
+horizontal_alignment = 1
+script = ExtResource("11_hqns4")
 
 [node name="8" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(399, -65)
@@ -206,8 +310,19 @@ script = ExtResource("12_x0ka3")
 [node name="8" type="CollisionShape2D" parent="Sequence Buttons/8/8"]
 shape = SubResource("RectangleShape2D_ta5nu")
 
+[node name="8t" type="RichTextLabel" parent="Sequence Buttons/8"]
+offset_left = -48.0
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 90.0
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 32
+text = "--"
+horizontal_alignment = 1
+script = ExtResource("11_hqns4")
+
 [node name="9" type="AnimatedSprite2D" parent="Sequence Buttons"]
-position = Vector2(-399, 103)
+position = Vector2(-399, 79)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
 [node name="9" type="Area2D" parent="Sequence Buttons/9"]
@@ -216,8 +331,20 @@ script = ExtResource("12_x0ka3")
 [node name="9" type="CollisionShape2D" parent="Sequence Buttons/9/9"]
 shape = SubResource("RectangleShape2D_flf07")
 
+[node name="9t" type="RichTextLabel" parent="Sequence Buttons/9"]
+offset_left = -48.0
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 90.0
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 32
+text = "--"
+horizontal_alignment = 1
+script = ExtResource("11_hqns4")
+metadata/_edit_use_anchors_ = true
+
 [node name="10" type="AnimatedSprite2D" parent="Sequence Buttons"]
-position = Vector2(-285, 103)
+position = Vector2(-285, 79)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
 [node name="10" type="Area2D" parent="Sequence Buttons/10"]
@@ -226,8 +353,20 @@ script = ExtResource("12_x0ka3")
 [node name="10" type="CollisionShape2D" parent="Sequence Buttons/10/10"]
 shape = SubResource("RectangleShape2D_k73cj")
 
+[node name="10t" type="RichTextLabel" parent="Sequence Buttons/10"]
+offset_left = -48.0
+offset_top = 49.0
+offset_right = 48.0
+offset_bottom = 91.0
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 32
+text = "--"
+horizontal_alignment = 1
+script = ExtResource("11_hqns4")
+metadata/_edit_use_anchors_ = true
+
 [node name="11" type="AnimatedSprite2D" parent="Sequence Buttons"]
-position = Vector2(-171, 103)
+position = Vector2(-171, 79)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
 [node name="11" type="Area2D" parent="Sequence Buttons/11"]
@@ -236,8 +375,20 @@ script = ExtResource("12_x0ka3")
 [node name="11" type="CollisionShape2D" parent="Sequence Buttons/11/11"]
 shape = SubResource("RectangleShape2D_rjqkl")
 
+[node name="11t" type="RichTextLabel" parent="Sequence Buttons/11"]
+offset_left = -48.0
+offset_top = 49.0
+offset_right = 48.0
+offset_bottom = 91.0
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 32
+text = "--"
+horizontal_alignment = 1
+script = ExtResource("11_hqns4")
+metadata/_edit_use_anchors_ = true
+
 [node name="12" type="AnimatedSprite2D" parent="Sequence Buttons"]
-position = Vector2(-57, 103)
+position = Vector2(-57, 79)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
 [node name="12" type="Area2D" parent="Sequence Buttons/12"]
@@ -246,8 +397,20 @@ script = ExtResource("12_x0ka3")
 [node name="12" type="CollisionShape2D" parent="Sequence Buttons/12/12"]
 shape = SubResource("RectangleShape2D_fs4d3")
 
+[node name="12t" type="RichTextLabel" parent="Sequence Buttons/12"]
+offset_left = -48.0
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 90.0
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 32
+text = "--"
+horizontal_alignment = 1
+script = ExtResource("11_hqns4")
+metadata/_edit_use_anchors_ = true
+
 [node name="13" type="AnimatedSprite2D" parent="Sequence Buttons"]
-position = Vector2(57, 103)
+position = Vector2(57, 79)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
 [node name="13" type="Area2D" parent="Sequence Buttons/13"]
@@ -256,8 +419,20 @@ script = ExtResource("12_x0ka3")
 [node name="13" type="CollisionShape2D" parent="Sequence Buttons/13/13"]
 shape = SubResource("RectangleShape2D_7vxoj")
 
+[node name="13t" type="RichTextLabel" parent="Sequence Buttons/13"]
+offset_left = -48.0
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 90.0
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 32
+text = "--"
+horizontal_alignment = 1
+script = ExtResource("11_hqns4")
+metadata/_edit_use_anchors_ = true
+
 [node name="14" type="AnimatedSprite2D" parent="Sequence Buttons"]
-position = Vector2(171, 103)
+position = Vector2(171, 79)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
 [node name="14" type="Area2D" parent="Sequence Buttons/14"]
@@ -266,8 +441,20 @@ script = ExtResource("12_x0ka3")
 [node name="14" type="CollisionShape2D" parent="Sequence Buttons/14/14"]
 shape = SubResource("RectangleShape2D_ei405")
 
+[node name="14t" type="RichTextLabel" parent="Sequence Buttons/14"]
+offset_left = -48.0
+offset_top = 48.0
+offset_right = 48.0
+offset_bottom = 90.0
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 32
+text = "--"
+horizontal_alignment = 1
+script = ExtResource("11_hqns4")
+metadata/_edit_use_anchors_ = true
+
 [node name="15" type="AnimatedSprite2D" parent="Sequence Buttons"]
-position = Vector2(285, 103)
+position = Vector2(285, 79)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
 [node name="15" type="Area2D" parent="Sequence Buttons/15"]
@@ -276,8 +463,20 @@ script = ExtResource("12_x0ka3")
 [node name="15" type="CollisionShape2D" parent="Sequence Buttons/15/15"]
 shape = SubResource("RectangleShape2D_e8dv2")
 
+[node name="15t" type="RichTextLabel" parent="Sequence Buttons/15"]
+offset_left = -48.0
+offset_top = 49.0
+offset_right = 48.0
+offset_bottom = 91.0
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 32
+text = "--"
+horizontal_alignment = 1
+script = ExtResource("11_hqns4")
+metadata/_edit_use_anchors_ = true
+
 [node name="16" type="AnimatedSprite2D" parent="Sequence Buttons"]
-position = Vector2(399, 103)
+position = Vector2(399, 79)
 sprite_frames = SubResource("SpriteFrames_nr8wp")
 
 [node name="16" type="Area2D" parent="Sequence Buttons/16"]
@@ -285,6 +484,18 @@ script = ExtResource("12_x0ka3")
 
 [node name="16" type="CollisionShape2D" parent="Sequence Buttons/16/16"]
 shape = SubResource("RectangleShape2D_2nhjh")
+
+[node name="16t" type="RichTextLabel" parent="Sequence Buttons/16"]
+offset_left = -48.0
+offset_top = 49.0
+offset_right = 48.0
+offset_bottom = 91.0
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 32
+text = "--"
+horizontal_alignment = 1
+script = ExtResource("11_hqns4")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Stop" to="." method="_on_stop_pressed"]

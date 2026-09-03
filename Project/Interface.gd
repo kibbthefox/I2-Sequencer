@@ -45,9 +45,9 @@ func _process(_delta: float) -> void:
 		GlobalVariable.notepressed = true
 	else:
 		GlobalVariable.notepressed = false
-	if Input.is_action_just_pressed("-") and GlobalVariable.keyboardoctave > 1:
+	if Input.is_action_just_pressed("-") and GlobalVariable.keyboardoctave > 2:
 		GlobalVariable.keyboardoctave -= 1
-	if Input.is_action_just_pressed("+") and GlobalVariable.keyboardoctave < 8:
+	if Input.is_action_just_pressed("+") and GlobalVariable.keyboardoctave < 7:
 		GlobalVariable.keyboardoctave += 1
 	for i in range(keyboardarr.size()):
 		if Input.is_action_just_pressed(keyboardarr[i]):
