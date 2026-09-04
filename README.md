@@ -7,6 +7,9 @@ I used Godot (GDScript) for scripting and Piskel (Pixel art website) for making 
 
 Fun Fact! When creating the name (I2 Sequencer), I decided to use the second letter of my fursona (Kibb) and a 2 because it was my second coding project of the music plugin type. I created a very similar program called the [K1 Monophonic Sampler](https://github.com/kibbthefox/K1-Monophonic-Sampler) back in July 2026.
 
+## Usage
+Click on a step and then use MIDI or a computer keyboard to input notes! Use the delete key on your keyboard to remove any notes. Use - and + to change the octave on your keyboard.
+
 ## Opening Instructions
 ### MacOS
 Only one version of MacOS has been tested (Intel). The version it was tested on was Ventura 13.7.8. This version has been tested multiple times.

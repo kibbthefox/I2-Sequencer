@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dcwopsgo0bylm"]
+[gd_scene load_steps=38 format=3 uid="uid://dcwopsgo0bylm"]
 
 [ext_resource type="Texture2D" uid="uid://8n3w8wobra60" path="res://New Piskel-1.png.png" id="1_4d7sh"]
 [ext_resource type="Script" uid="uid://cj4nuq3kiir86" path="res://Interface.gd" id="1_hqns4"]
@@ -7,14 +7,18 @@
 [ext_resource type="Script" uid="uid://dreco3m5753s3" path="res://oct_display.gd" id="4_4d7sh"]
 [ext_resource type="Script" uid="uid://csuxnrqglnmef" path="res://Stepammount.gd" id="5_nr8wp"]
 [ext_resource type="Texture2D" uid="uid://cfvxh4emh1nk0" path="res://Assets/playpause/playing.png" id="6_0h7mo"]
+[ext_resource type="Texture2D" uid="uid://bxr8xddv2w7pu" path="res://Assets/Down.png" id="6_flf07"]
 [ext_resource type="Texture2D" uid="uid://c2sledpqh0e7h" path="res://Buttons/button_0.png" id="6_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://sy3dnvvybtlm" path="res://Buttons/button_1.png" id="7_hqns4"]
+[ext_resource type="Texture2D" uid="uid://b5gmav7yv7umc" path="res://Assets/Up.png" id="7_k73cj"]
 [ext_resource type="Texture2D" uid="uid://c1fgkd3oo7awt" path="res://Assets/playpause/paused.png" id="7_nr8wp"]
 [ext_resource type="Texture2D" uid="uid://b3qwwgx6xl34b" path="res://Buttons/button_2.png" id="8_x0ka3"]
 [ext_resource type="Texture2D" uid="uid://b7igagf73l6xs" path="res://Buttons/button_3.png" id="9_0h7mo"]
 [ext_resource type="Script" uid="uid://j31qtwiuce5d" path="res://notedisplays.gd" id="11_hqns4"]
 [ext_resource type="Script" uid="uid://dbl4t8cjpso0d" path="res://1.gd" id="12_x0ka3"]
 [ext_resource type="Texture2D" uid="uid://bgfthod3mrku1" path="res://Buttons/button_4.png" id="13_d2bti"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjqkl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0h7mo"]
 
@@ -113,28 +117,133 @@ stream = ExtResource("3_x0ka3")
 
 [node name="DualAudio" type="AudioStreamPlayer" parent="."]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Steps" type="RichTextLabel" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 981.0
-offset_top = 460.0
-offset_right = 1053.0
-offset_bottom = 527.0
+offset_left = 897.0
+offset_top = 449.0
+offset_right = 1001.0
+offset_bottom = 501.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(30, 30)
+pivot_offset = Vector2(52, 30)
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
 theme_override_font_sizes/normal_font_size = 48
+text = "Steps
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="stepsdisplay" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 939.0
+offset_top = 496.0
+offset_right = 1025.0
+offset_bottom = 585.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 80
 text = "16"
+horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("5_nr8wp")
 
-[node name="Play" type="Button" parent="."]
+[node name="stepsdown" type="Button" parent="."]
+offset_left = 888.0
+offset_top = 556.0
+offset_right = 936.0
+offset_bottom = 596.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_rjqkl")
+icon = ExtResource("6_flf07")
+flat = true
+icon_alignment = 1
+
+[node name="stepsup" type="Button" parent="."]
+offset_left = 888.0
+offset_top = 506.0
+offset_right = 936.0
+offset_bottom = 546.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_rjqkl")
+icon = ExtResource("7_k73cj")
+flat = true
+icon_alignment = 1
+
+[node name="Oct" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = 729.0
-offset_top = 435.0
-offset_right = 825.0
-offset_bottom = 531.0
+offset_top = 449.0
+offset_right = 833.0
+offset_bottom = 501.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(52, 30)
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 48
+text = "Oct
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="octdisplay" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 771.0
+offset_top = 496.0
+offset_right = 857.0
+offset_bottom = 585.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 80
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_4d7sh")
+
+[node name="octdown" type="Button" parent="."]
+offset_left = 720.0
+offset_top = 556.0
+offset_right = 768.0
+offset_bottom = 596.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_rjqkl")
+icon = ExtResource("6_flf07")
+flat = true
+icon_alignment = 1
+
+[node name="octup" type="Button" parent="."]
+offset_left = 720.0
+offset_top = 506.0
+offset_right = 768.0
+offset_bottom = 546.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_rjqkl")
+icon = ExtResource("7_k73cj")
+flat = true
+icon_alignment = 1
+
+[node name="Play" type="Button" parent="."]
+offset_left = 129.0
+offset_top = 437.0
+offset_right = 225.0
+offset_bottom = 533.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_0h7mo")
 icon = ExtResource("6_0h7mo")
@@ -143,32 +252,16 @@ clip_text = true
 icon_alignment = 1
 
 [node name="Stop" type="Button" parent="."]
-offset_left = 835.0
-offset_top = 435.0
-offset_right = 931.0
-offset_bottom = 531.0
+offset_left = 243.0
+offset_top = 437.0
+offset_right = 339.0
+offset_bottom = 533.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_nr8wp")
 icon = ExtResource("7_nr8wp")
 flat = true
 clip_text = true
 icon_alignment = 1
-
-[node name="desc" type="RichTextLabel" parent="."]
-offset_left = 280.0
-offset_top = 478.0
-offset_right = 608.0
-offset_bottom = 612.0
-text = "Click on a step and then use MIDI or a computer keyboard to input notes! Use the delete key on your keyboard to remove the notes. Use - and + to change the octave on your keyboard."
-
-[node name="OctDisplay" type="RichTextLabel" parent="."]
-offset_left = 711.0
-offset_top = 551.0
-offset_right = 1050.0
-offset_bottom = 626.0
-theme_override_font_sizes/normal_font_size = 35
-text = "Keyboard Oct: #"
-script = ExtResource("4_4d7sh")
 
 [node name="Sequence Buttons" type="Node2D" parent="."]
 position = Vector2(576, 257)
@@ -519,6 +612,10 @@ horizontal_alignment = 1
 script = ExtResource("11_hqns4")
 metadata/_edit_use_anchors_ = true
 
+[connection signal="pressed" from="stepsdown" to="stepsdisplay" method="_on_stepsdown_pressed"]
+[connection signal="pressed" from="stepsup" to="stepsdisplay" method="_on_stepsup_pressed"]
+[connection signal="pressed" from="octdown" to="octdisplay" method="_on_octdown_pressed"]
+[connection signal="pressed" from="octup" to="octdisplay" method="_on_octup_pressed"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Stop" to="." method="_on_stop_pressed"]
 [connection signal="input_event" from="Sequence Buttons/1/1" to="Sequence Buttons/1/1" method="_on_input_event"]
