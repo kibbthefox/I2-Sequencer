@@ -63,7 +63,7 @@ func _physics_process(_delta: float) -> void:
 	if mode == "Normal" and play == true:
 		time += 1
 		if time > 23:
-			if GlobalVariable.step < 16:
+			if GlobalVariable.step < GlobalVariable.stepamount:
 				GlobalVariable.step += 1
 			else:
 				GlobalVariable.step = 1

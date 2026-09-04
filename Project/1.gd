@@ -27,7 +27,9 @@ func _process(_delta: float) -> void:
 		state = "sitting"
 		GlobalVariable.sequence[int(get_parent().name) - 1] = 0
 		GlobalVariable.selected = 0
-	if GlobalVariable.step == int(get_parent().name):
+	if int(get_parent().name) > GlobalVariable.stepamount:
+		$"..".frame = 4
+	elif GlobalVariable.step == int(get_parent().name):
 		$"..".frame = 3
 	elif state == "waiting":
 		$"..".frame = 1

@@ -10,3 +10,4 @@ var keyboardoctave:int = 4
 var notepressed:bool = false
 var latestnote:int = 0
 var step:int = 0
+var stepamount:int = 16

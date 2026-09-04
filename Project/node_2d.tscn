@@ -1,10 +1,11 @@
-[gd_scene load_steps=33 format=3 uid="uid://dcwopsgo0bylm"]
+[gd_scene load_steps=35 format=3 uid="uid://dcwopsgo0bylm"]
 
 [ext_resource type="Texture2D" uid="uid://8n3w8wobra60" path="res://New Piskel-1.png.png" id="1_4d7sh"]
 [ext_resource type="Script" uid="uid://cj4nuq3kiir86" path="res://Interface.gd" id="1_hqns4"]
 [ext_resource type="FontFile" uid="uid://yopnx4emx1ke" path="res://Assets/Font/fs-pixel-sans-unicode-regular.ttf" id="3_ir8iy"]
 [ext_resource type="AudioStream" uid="uid://cqbs1vucod0io" path="res://C5.wav" id="3_x0ka3"]
 [ext_resource type="Script" uid="uid://dreco3m5753s3" path="res://oct_display.gd" id="4_4d7sh"]
+[ext_resource type="Script" uid="uid://csuxnrqglnmef" path="res://Stepammount.gd" id="5_nr8wp"]
 [ext_resource type="Texture2D" uid="uid://cfvxh4emh1nk0" path="res://Assets/playpause/playing.png" id="6_0h7mo"]
 [ext_resource type="Texture2D" uid="uid://c2sledpqh0e7h" path="res://Buttons/button_0.png" id="6_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://sy3dnvvybtlm" path="res://Buttons/button_1.png" id="7_hqns4"]
@@ -13,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b7igagf73l6xs" path="res://Buttons/button_3.png" id="9_0h7mo"]
 [ext_resource type="Script" uid="uid://j31qtwiuce5d" path="res://notedisplays.gd" id="11_hqns4"]
 [ext_resource type="Script" uid="uid://dbl4t8cjpso0d" path="res://1.gd" id="12_x0ka3"]
+[ext_resource type="Texture2D" uid="uid://bgfthod3mrku1" path="res://Buttons/button_4.png" id="13_d2bti"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0h7mo"]
 
@@ -32,6 +34,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("9_0h7mo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_d2bti")
 }],
 "loop": true,
 "name": &"default",
@@ -90,8 +95,8 @@ size = Vector2(96, 96)
 script = ExtResource("1_hqns4")
 
 [node name="BG Blue" type="Sprite2D" parent="."]
-position = Vector2(576, 261)
-scale = Vector2(1.78623, 2.11343)
+position = Vector2(577.75, 323.25)
+scale = Vector2(1.42935, 1.60301)
 texture = ExtResource("1_4d7sh")
 
 [node name="Title" type="RichTextLabel" parent="."]
@@ -107,6 +112,23 @@ horizontal_alignment = 1
 stream = ExtResource("3_x0ka3")
 
 [node name="DualAudio" type="AudioStreamPlayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 981.0
+offset_top = 460.0
+offset_right = 1053.0
+offset_bottom = 527.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(30, 30)
+theme_override_font_sizes/normal_font_size = 48
+text = "16"
+script = ExtResource("5_nr8wp")
 
 [node name="Play" type="Button" parent="."]
 offset_left = 729.0
