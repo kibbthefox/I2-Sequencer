@@ -58,11 +58,14 @@ func _process(_delta: float) -> void:
 			if latestkeyboardnote == keyboardarr[i]:
 				whatsletgo[1] = "k"
 
+# make time be 2 for first time through so playing starts quicker
+
+#ASDINYASDUOYSABDFHP*(ASYDBASD
 
 func _physics_process(_delta: float) -> void:
 	if mode == "Normal" and play == true:
 		time += 1
-		if time > 23:
+		if time > GlobalVariable.bpmsecs:
 			if GlobalVariable.step < GlobalVariable.stepamount:
 				GlobalVariable.step += 1
 			else:

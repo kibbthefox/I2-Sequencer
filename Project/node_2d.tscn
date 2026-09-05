@@ -1,14 +1,17 @@
-[gd_scene load_steps=38 format=3 uid="uid://dcwopsgo0bylm"]
+[gd_scene load_steps=41 format=3 uid="uid://dcwopsgo0bylm"]
 
 [ext_resource type="Texture2D" uid="uid://8n3w8wobra60" path="res://New Piskel-1.png.png" id="1_4d7sh"]
 [ext_resource type="Script" uid="uid://cj4nuq3kiir86" path="res://Interface.gd" id="1_hqns4"]
 [ext_resource type="FontFile" uid="uid://yopnx4emx1ke" path="res://Assets/Font/fs-pixel-sans-unicode-regular.ttf" id="3_ir8iy"]
 [ext_resource type="AudioStream" uid="uid://cqbs1vucod0io" path="res://C5.wav" id="3_x0ka3"]
 [ext_resource type="Script" uid="uid://dreco3m5753s3" path="res://oct_display.gd" id="4_4d7sh"]
+[ext_resource type="Texture2D" uid="uid://cdp8aokrn85bc" path="res://Assets/line.png" id="5_fs4d3"]
 [ext_resource type="Script" uid="uid://csuxnrqglnmef" path="res://Stepammount.gd" id="5_nr8wp"]
 [ext_resource type="Texture2D" uid="uid://cfvxh4emh1nk0" path="res://Assets/playpause/playing.png" id="6_0h7mo"]
+[ext_resource type="Texture2D" uid="uid://4jxxmd7dc0jl" path="res://Assets/ball.png" id="6_7vxoj"]
 [ext_resource type="Texture2D" uid="uid://bxr8xddv2w7pu" path="res://Assets/Down.png" id="6_flf07"]
 [ext_resource type="Texture2D" uid="uid://c2sledpqh0e7h" path="res://Buttons/button_0.png" id="6_ir8iy"]
+[ext_resource type="Script" uid="uid://c231pajlmasni" path="res://ball.gd" id="7_ei405"]
 [ext_resource type="Texture2D" uid="uid://sy3dnvvybtlm" path="res://Buttons/button_1.png" id="7_hqns4"]
 [ext_resource type="Texture2D" uid="uid://b5gmav7yv7umc" path="res://Assets/Up.png" id="7_k73cj"]
 [ext_resource type="Texture2D" uid="uid://c1fgkd3oo7awt" path="res://Assets/playpause/paused.png" id="7_nr8wp"]
@@ -98,6 +101,11 @@ size = Vector2(96, 96)
 [node name="Interface" type="Node2D"]
 script = ExtResource("1_hqns4")
 
+[node name="NormalAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_x0ka3")
+
+[node name="DualAudio" type="AudioStreamPlayer" parent="."]
+
 [node name="BG Blue" type="Sprite2D" parent="."]
 position = Vector2(577.75, 323.25)
 scale = Vector2(1.42935, 1.60301)
@@ -112,10 +120,20 @@ bbcode_enabled = true
 text = "I2 Sequencer"
 horizontal_alignment = 1
 
-[node name="NormalAudio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_x0ka3")
+[node name="Line" type="Sprite2D" parent="."]
+position = Vector2(858, 615)
+scale = Vector2(201, 7.97)
+texture = ExtResource("5_fs4d3")
 
-[node name="DualAudio" type="AudioStreamPlayer" parent="."]
+[node name="Ball" type="Sprite2D" parent="."]
+position = Vector2(882, 615)
+texture = ExtResource("6_7vxoj")
+script = ExtResource("7_ei405")
+
+[node name="Ball2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(637, 569)
+texture = ExtResource("6_7vxoj")
 
 [node name="Steps" type="RichTextLabel" parent="."]
 anchors_preset = 8
@@ -124,9 +142,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 897.0
-offset_top = 449.0
+offset_top = 403.0
 offset_right = 1001.0
-offset_bottom = 501.0
+offset_bottom = 455.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(52, 30)
@@ -144,9 +162,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 939.0
-offset_top = 496.0
+offset_top = 450.0
 offset_right = 1025.0
-offset_bottom = 585.0
+offset_bottom = 539.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("3_ir8iy")
@@ -158,9 +176,9 @@ script = ExtResource("5_nr8wp")
 
 [node name="stepsdown" type="Button" parent="."]
 offset_left = 888.0
-offset_top = 556.0
+offset_top = 510.0
 offset_right = 936.0
-offset_bottom = 596.0
+offset_bottom = 550.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_rjqkl")
 icon = ExtResource("6_flf07")
@@ -169,9 +187,9 @@ icon_alignment = 1
 
 [node name="stepsup" type="Button" parent="."]
 offset_left = 888.0
-offset_top = 506.0
+offset_top = 460.0
 offset_right = 936.0
-offset_bottom = 546.0
+offset_bottom = 500.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_rjqkl")
 icon = ExtResource("7_k73cj")
@@ -185,15 +203,35 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 729.0
-offset_top = 449.0
+offset_top = 403.0
 offset_right = 833.0
-offset_bottom = 501.0
+offset_bottom = 455.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(52, 30)
 theme_override_fonts/normal_font = ExtResource("3_ir8iy")
 theme_override_font_sizes/normal_font_size = 48
 text = "Oct
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tempo" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 805.0
+offset_top = 539.0
+offset_right = 909.0
+offset_bottom = 591.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(52, 30)
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 48
+text = "Speed
 "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -205,9 +243,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 771.0
-offset_top = 496.0
+offset_top = 450.0
 offset_right = 857.0
-offset_bottom = 585.0
+offset_bottom = 539.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("3_ir8iy")
@@ -219,9 +257,9 @@ script = ExtResource("4_4d7sh")
 
 [node name="octdown" type="Button" parent="."]
 offset_left = 720.0
-offset_top = 556.0
+offset_top = 510.0
 offset_right = 768.0
-offset_bottom = 596.0
+offset_bottom = 550.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_rjqkl")
 icon = ExtResource("6_flf07")
@@ -230,9 +268,9 @@ icon_alignment = 1
 
 [node name="octup" type="Button" parent="."]
 offset_left = 720.0
-offset_top = 506.0
+offset_top = 460.0
 offset_right = 768.0
-offset_bottom = 546.0
+offset_bottom = 500.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_rjqkl")
 icon = ExtResource("7_k73cj")

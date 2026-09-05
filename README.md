@@ -1,7 +1,7 @@
 # **I2 Sequencer**
 
 ## General Information
-The I2S is a sequencer that takes input ranging 10 octaves (C0-C9) through a MIDI keyboard or computer keyboard.
+The I2S is a sequencer that takes input ranging 10 octaves (C0-C9) through a MIDI keyboard or computer keyboard. It has customizable speed and step count.
 
 I used Godot (GDScript) for scripting and Piskel (Pixel art website) for making assets. I made it for the Hackclub Program [Stardance](https://stardance.hackclub.com/home). I love making music and music gear so I thought it would be fun to code a music-related program.
 
