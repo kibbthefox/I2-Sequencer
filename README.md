@@ -16,15 +16,28 @@ There will eventually be a youtube link here and potentially an itch.io link if 
 [Github](https://github.com/kibbthefox/K1-Monophonic-Sampler)
 
 ## Opening Instructions
-### MacOS
-Only one version of MacOS has been tested (Intel). The version it was tested on was Ventura 13.7.8. This version has been tested multiple times.
 
-To open, uncompress the zip, and right click on the file. Select "Open" and then it will open up a window. Click "Open" again and then the program will open. You may need to right click and select "Open" twice if the window below shows up without the "Open" button.
+### Versions Tested
+
+MacOS has been tested multiple times. Windows has been tested once.
+| OS      | Version        | Processor                                     |
+| ------- | -------------- | --------------------------------------------- |
+| MacOS   | Ventura 13.7.8 | 2.9 GHz Quad-Core Intel Core i7.              |
+| Windows | Windows 11     | 13th Gen Intel(R) Core(TM) i5-1345U (1.60 GHz)|
+
+Other versions of Windows/MacOS may potentially work.
+
+### MacOS
+
+To open, uncompress the zip, and right click on the file. Select "Open" and then it will open up a window. Click "Open" again and then the program will open. You will probably need to do this twice because gatekeeper usually blocks it the first time.
 
 ### Windows
-Only Windows 11 has been tested once.
 
-Uncompress the .zip and open the file. If a windows security window shows up, click "more info" on the windows security window, and then click "Run Anyway"
+Uncompress the .zip and open the file. If a windows security window shows up, click "more info" and then click "Run Anyway"
 
 ## MIDI Instructions
  To use MIDI input, your MIDI keyboard MUST be plugged in when the program launches. You can always restart. After trying, I was not able to code a button to connect to MIDI :( 
+
+## Screenshots
+
+To be added when project is complete.
