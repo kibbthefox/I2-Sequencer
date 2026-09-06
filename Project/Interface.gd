@@ -13,7 +13,11 @@ var latestmidinote:int = 0
 var latestkeyboardnote:String
 var pitcharray:Array = [1,1.0595,1.1225,1.1892,1.2599,1.3348,1.4142,1.4983,1.5874,1.6818,1.7818,1.8877]
 var time:int = 0
-
+var releasehelper
+var attackhelper
+var sustaincalc
+var juststarted:bool = false
+var jshelper:float
 
 func _ready():
 	OS.open_midi_inputs()
@@ -52,35 +56,74 @@ func _process(_delta: float) -> void:
 	for i in range(keyboardarr.size()):
 		if Input.is_action_just_pressed(keyboardarr[i]):
 			latestkeyboardnote = keyboardarr[i]
-			GlobalVariable.latestnote = (12 * (GlobalVariable.keyboardoctave - 2)) + keydownhelparr[i] + 12 * int(log(GlobalVariable.keyboardoctave)/log(2))
+			#GlobalVariable.latestnote = (12 * (GlobalVariable.keyboardoctave - 2)) + keydownhelparr[i] + 12 * int(log(GlobalVariable.keyboardoctave)/log(2))
+			GlobalVariable.latestnote = (12 * (GlobalVariable.keyboardoctave) + keydownhelparr[i])
 			whatsletgo[1] = "x"
 		if Input.is_action_just_released(keyboardarr[i]):
 			if latestkeyboardnote == keyboardarr[i]:
 				whatsletgo[1] = "k"
 
-# make time be 2 for first time through so playing starts quicker
+func _on_play_pressed() -> void:
+	time = 0
+	GlobalVariable.step = 0
+	play = true
+	juststarted = true
 
-#ASDINYASDUOYSABDFHP*(ASYDBASD
+func _on_stop_pressed() -> void:
+	play = false
+	GlobalVariable.step = 0
+	juststarted = false
+
 
 func _physics_process(_delta: float) -> void:
 	if mode == "Normal" and play == true:
 		time += 1
-		if time > GlobalVariable.bpmsecs:
+		if juststarted == true:
+			jshelper = 2.0/float(GlobalVariable.bpmsecs)
+		if time > GlobalVariable.bpmsecs * jshelper:
+			juststarted = false
+			jshelper = 1
 			if GlobalVariable.step < GlobalVariable.stepamount:
 				GlobalVariable.step += 1
 			else:
 				GlobalVariable.step = 1
 			if GlobalVariable.sequence[GlobalVariable.step - 1] > 0:
-				$NormalAudio.pitch_scale = (pitcharray[GlobalVariable.sequence[GlobalVariable.step - 1] - floor(GlobalVariable.sequence[GlobalVariable.step - 1]/12.0) * 12] * (2 ** (floor(GlobalVariable.sequence[GlobalVariable.step - 1]/12.0) - 6)))
-				$NormalAudio.play()
+				playprocess()
 			time = 0
+	
+	if releasehelper == "subtract" and GlobalVariable.release < 10:
+		if GlobalVariable.release > 0:
+			$NormalAudio.volume_db -= (8.0/6.0) / GlobalVariable.release
+		else:
+			$NormalAudio.volume_db -= 80
+	if attackhelper == "attack" and GlobalVariable.attack > 0 and $NormalAudio.volume_db < 0:
+		if releasehelper == "standstill":
+			if $NormalAudio.volume_db + (8.0/6.0) / GlobalVariable.attack > 0:
+				$NormalAudio.volume_db = 0
+			else:
+				$NormalAudio.volume_db += (8.0/6.0) / GlobalVariable.attack
+	elif $NormalAudio.volume_db >= 0:
+		attackhelper = "stop"
+	if attackhelper == "stop" and releasehelper == "standstill":
+		sustaincalc = (GlobalVariable.sustain/100.0 * 40)
+		if $NormalAudio.volume_db - ((40 - sustaincalc)/60) / GlobalVariable.decay > (sustaincalc - 40):
+			$NormalAudio.volume_db -= ((40 - sustaincalc)/60) / GlobalVariable.decay
+		else:
+			releasehelper = "subtract"
+			$NormalAudio.volume_db = (sustaincalc - 40)
 
 
-func _on_play_pressed() -> void:
-	time = 0
-	play = true
 
-
-func _on_stop_pressed() -> void:
-	play = false
-	GlobalVariable.step = 0
+func playprocess():
+	releasehelper = "standstill"
+	if GlobalVariable.attack > 0:
+		$NormalAudio.volume_db = -80
+		attackhelper = "attack"
+		$NormalAudio.play()
+	else:
+		attackhelper = "stop"
+		$NormalAudio.volume_db = 0
+		$NormalAudio.play()
+	$NormalAudio.pitch_scale = (pitcharray[GlobalVariable.sequence[GlobalVariable.step - 1] - floor(GlobalVariable.sequence[GlobalVariable.step - 1]/12.0) * 12] * (2 ** (floor(GlobalVariable.sequence[GlobalVariable.step - 1]/12.0) - 6)))
+	
+	

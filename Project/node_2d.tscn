@@ -1,31 +1,151 @@
-[gd_scene load_steps=41 format=3 uid="uid://dcwopsgo0bylm"]
+[gd_scene load_steps=70 format=3 uid="uid://dcwopsgo0bylm"]
 
 [ext_resource type="Texture2D" uid="uid://8n3w8wobra60" path="res://New Piskel-1.png.png" id="1_4d7sh"]
 [ext_resource type="Script" uid="uid://cj4nuq3kiir86" path="res://Interface.gd" id="1_hqns4"]
 [ext_resource type="FontFile" uid="uid://yopnx4emx1ke" path="res://Assets/Font/fs-pixel-sans-unicode-regular.ttf" id="3_ir8iy"]
 [ext_resource type="AudioStream" uid="uid://cqbs1vucod0io" path="res://C5.wav" id="3_x0ka3"]
-[ext_resource type="Script" uid="uid://dreco3m5753s3" path="res://oct_display.gd" id="4_4d7sh"]
+[ext_resource type="Script" uid="uid://dreco3m5753s3" path="res://display.gd" id="4_4d7sh"]
+[ext_resource type="Texture2D" uid="uid://bwklihd7xh43o" path="res://Assets/knob/knob00 copy.png" id="5_3ngjr"]
 [ext_resource type="Texture2D" uid="uid://cdp8aokrn85bc" path="res://Assets/line.png" id="5_fs4d3"]
-[ext_resource type="Script" uid="uid://csuxnrqglnmef" path="res://Stepammount.gd" id="5_nr8wp"]
 [ext_resource type="Texture2D" uid="uid://cfvxh4emh1nk0" path="res://Assets/playpause/playing.png" id="6_0h7mo"]
 [ext_resource type="Texture2D" uid="uid://4jxxmd7dc0jl" path="res://Assets/ball.png" id="6_7vxoj"]
 [ext_resource type="Texture2D" uid="uid://bxr8xddv2w7pu" path="res://Assets/Down.png" id="6_flf07"]
 [ext_resource type="Texture2D" uid="uid://c2sledpqh0e7h" path="res://Buttons/button_0.png" id="6_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://d3sx3mgion8bh" path="res://Assets/knob/knob01 copy.png" id="6_qilgh"]
+[ext_resource type="Texture2D" uid="uid://6p6173i3cr15" path="res://Assets/knob/knob02 copy.png" id="7_4qosj"]
 [ext_resource type="Script" uid="uid://c231pajlmasni" path="res://ball.gd" id="7_ei405"]
 [ext_resource type="Texture2D" uid="uid://sy3dnvvybtlm" path="res://Buttons/button_1.png" id="7_hqns4"]
 [ext_resource type="Texture2D" uid="uid://b5gmav7yv7umc" path="res://Assets/Up.png" id="7_k73cj"]
 [ext_resource type="Texture2D" uid="uid://c1fgkd3oo7awt" path="res://Assets/playpause/paused.png" id="7_nr8wp"]
+[ext_resource type="Texture2D" uid="uid://bkvb04jymkcwl" path="res://Assets/knob/knob03 copy.png" id="8_cjlbh"]
 [ext_resource type="Texture2D" uid="uid://b3qwwgx6xl34b" path="res://Buttons/button_2.png" id="8_x0ka3"]
 [ext_resource type="Texture2D" uid="uid://b7igagf73l6xs" path="res://Buttons/button_3.png" id="9_0h7mo"]
+[ext_resource type="Texture2D" uid="uid://dxisbyg46takb" path="res://Assets/knob/knob04 copy.png" id="9_kfelt"]
+[ext_resource type="Texture2D" uid="uid://bv0revnjumblb" path="res://Assets/knob/knob05 copy.png" id="10_ytlpd"]
+[ext_resource type="Texture2D" uid="uid://c5gg7p6acyla6" path="res://Assets/knob/knob06 copy.png" id="11_2v765"]
 [ext_resource type="Script" uid="uid://j31qtwiuce5d" path="res://notedisplays.gd" id="11_hqns4"]
+[ext_resource type="Texture2D" uid="uid://f4vqqaijppv5" path="res://Assets/knob/knob07 copy.png" id="12_b8fb0"]
 [ext_resource type="Script" uid="uid://dbl4t8cjpso0d" path="res://1.gd" id="12_x0ka3"]
 [ext_resource type="Texture2D" uid="uid://bgfthod3mrku1" path="res://Buttons/button_4.png" id="13_d2bti"]
+[ext_resource type="Texture2D" uid="uid://dsd4dc2igy3c" path="res://Assets/knob/knob08 copy.png" id="13_ma08v"]
+[ext_resource type="Texture2D" uid="uid://ccjgakufw3kfx" path="res://Assets/knob/knob09 copy.png" id="14_s32dh"]
+[ext_resource type="Texture2D" uid="uid://dbjagnjgucla1" path="res://Assets/knob/knob10 copy.png" id="15_037st"]
+[ext_resource type="Texture2D" uid="uid://v0vgh08ux2i7" path="res://Assets/knob/knob11 copy.png" id="16_6orn5"]
+[ext_resource type="Texture2D" uid="uid://5ocr82vrel0j" path="res://Assets/knob/knob12 copy.png" id="17_whnp6"]
+[ext_resource type="Texture2D" uid="uid://b5kfjnierym8e" path="res://Assets/knob/knob13 copy.png" id="18_22e24"]
+[ext_resource type="Texture2D" uid="uid://da8jy4b0epjjh" path="res://Assets/knob/knob14 copy.png" id="19_m7xe6"]
+[ext_resource type="Texture2D" uid="uid://i4apuvxpbr25" path="res://Assets/knob/knob15 copy.png" id="20_wqmsq"]
+[ext_resource type="Texture2D" uid="uid://dngfyba5sc6eh" path="res://Assets/knob/knob16 copy.png" id="21_fkgk1"]
+[ext_resource type="Texture2D" uid="uid://ds7gsikvbbir0" path="res://Assets/knob/knob17 copy.png" id="22_qgxp6"]
+[ext_resource type="Texture2D" uid="uid://ccajvatml614l" path="res://Assets/knob/knob18 copy.png" id="23_akb8o"]
+[ext_resource type="Texture2D" uid="uid://cgsnw75fp0oh8" path="res://Assets/knob/knob19 copy.png" id="24_t3mf0"]
+[ext_resource type="Texture2D" uid="uid://c1abvh0tftpa8" path="res://Assets/knob/knob20 copy.png" id="25_kejda"]
+[ext_resource type="Texture2D" uid="uid://cy42qad6uji63" path="res://Assets/knob/knob21 copy.png" id="26_uqk8q"]
+[ext_resource type="Texture2D" uid="uid://d4iqwwd70k217" path="res://Assets/knob/knob22 copy.png" id="27_6uidu"]
+[ext_resource type="Texture2D" uid="uid://o3t6uvcsk3lc" path="res://Assets/knob/knob23 copy.png" id="28_qu7as"]
+[ext_resource type="Texture2D" uid="uid://dhi4nkl1dhrpd" path="res://Assets/knob/knob24 copy.png" id="29_lyuya"]
+[ext_resource type="Texture2D" uid="uid://h8pr6nlxdjf6" path="res://Assets/knob/knob25 copy.png" id="30_5fipt"]
+[ext_resource type="Texture2D" uid="uid://da8dbue17b6j" path="res://Assets/knob/knob26 copy.png" id="31_j02gt"]
+[ext_resource type="Texture2D" uid="uid://cuxllue2e61dn" path="res://Assets/knob/knob27 copy.png" id="32_thyvg"]
+[ext_resource type="Script" uid="uid://n1jnkr5au1yk" path="res://knob.gd" id="42_qilgh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjqkl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0h7mo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nr8wp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nsnm2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_qilgh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4qosj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cjlbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kfelt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ytlpd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2v765")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_b8fb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ma08v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_s32dh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_037st")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6orn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_whnp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_22e24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_m7xe6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_wqmsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_fkgk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_qgxp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_akb8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_t3mf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_kejda")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_uqk8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_6uidu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_qu7as")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_lyuya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_5fipt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_j02gt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_thyvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3ngjr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nr8wp"]
 animations = [{
@@ -112,8 +232,9 @@ scale = Vector2(1.42935, 1.60301)
 texture = ExtResource("1_4d7sh")
 
 [node name="Title" type="RichTextLabel" parent="."]
+offset_top = -16.0
 offset_right = 1152.0
-offset_bottom = 113.0
+offset_bottom = 97.0
 theme_override_fonts/normal_font = ExtResource("3_ir8iy")
 theme_override_font_sizes/normal_font_size = 112
 bbcode_enabled = true
@@ -121,19 +242,14 @@ text = "I2 Sequencer"
 horizontal_alignment = 1
 
 [node name="Line" type="Sprite2D" parent="."]
-position = Vector2(858, 615)
+position = Vector2(858, 610)
 scale = Vector2(201, 7.97)
 texture = ExtResource("5_fs4d3")
 
 [node name="Ball" type="Sprite2D" parent="."]
-position = Vector2(882, 615)
+position = Vector2(882, 610)
 texture = ExtResource("6_7vxoj")
 script = ExtResource("7_ei405")
-
-[node name="Ball2" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(637, 569)
-texture = ExtResource("6_7vxoj")
 
 [node name="Steps" type="RichTextLabel" parent="."]
 anchors_preset = 8
@@ -142,9 +258,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 897.0
-offset_top = 403.0
+offset_top = 380.0
 offset_right = 1001.0
-offset_bottom = 455.0
+offset_bottom = 432.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(52, 30)
@@ -162,9 +278,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 939.0
-offset_top = 450.0
+offset_top = 427.0
 offset_right = 1025.0
-offset_bottom = 539.0
+offset_bottom = 516.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("3_ir8iy")
@@ -172,13 +288,13 @@ theme_override_font_sizes/normal_font_size = 80
 text = "16"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("5_nr8wp")
+script = ExtResource("4_4d7sh")
 
 [node name="stepsdown" type="Button" parent="."]
 offset_left = 888.0
-offset_top = 510.0
+offset_top = 487.0
 offset_right = 936.0
-offset_bottom = 550.0
+offset_bottom = 527.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_rjqkl")
 icon = ExtResource("6_flf07")
@@ -187,9 +303,9 @@ icon_alignment = 1
 
 [node name="stepsup" type="Button" parent="."]
 offset_left = 888.0
-offset_top = 460.0
+offset_top = 437.0
 offset_right = 936.0
-offset_bottom = 500.0
+offset_bottom = 477.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_rjqkl")
 icon = ExtResource("7_k73cj")
@@ -203,9 +319,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 729.0
-offset_top = 403.0
+offset_top = 380.0
 offset_right = 833.0
-offset_bottom = 455.0
+offset_bottom = 432.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(52, 30)
@@ -223,9 +339,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 805.0
-offset_top = 539.0
+offset_top = 534.0
 offset_right = 909.0
-offset_bottom = 591.0
+offset_bottom = 586.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(52, 30)
@@ -243,9 +359,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 771.0
-offset_top = 450.0
+offset_top = 427.0
 offset_right = 857.0
-offset_bottom = 539.0
+offset_bottom = 516.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("3_ir8iy")
@@ -257,9 +373,9 @@ script = ExtResource("4_4d7sh")
 
 [node name="octdown" type="Button" parent="."]
 offset_left = 720.0
-offset_top = 510.0
+offset_top = 487.0
 offset_right = 768.0
-offset_bottom = 550.0
+offset_bottom = 527.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_rjqkl")
 icon = ExtResource("6_flf07")
@@ -268,9 +384,9 @@ icon_alignment = 1
 
 [node name="octup" type="Button" parent="."]
 offset_left = 720.0
-offset_top = 460.0
+offset_top = 437.0
 offset_right = 768.0
-offset_bottom = 500.0
+offset_bottom = 477.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_rjqkl")
 icon = ExtResource("7_k73cj")
@@ -279,9 +395,9 @@ icon_alignment = 1
 
 [node name="Play" type="Button" parent="."]
 offset_left = 129.0
-offset_top = 437.0
+offset_top = 414.0
 offset_right = 225.0
-offset_bottom = 533.0
+offset_bottom = 510.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_0h7mo")
 icon = ExtResource("6_0h7mo")
@@ -291,9 +407,9 @@ icon_alignment = 1
 
 [node name="Stop" type="Button" parent="."]
 offset_left = 243.0
-offset_top = 437.0
+offset_top = 414.0
 offset_right = 339.0
-offset_bottom = 533.0
+offset_bottom = 510.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_nr8wp")
 icon = ExtResource("7_nr8wp")
@@ -301,8 +417,108 @@ flat = true
 clip_text = true
 icon_alignment = 1
 
+[node name="attackdisplay" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 419.0
+offset_top = 478.0
+offset_right = 521.0
+offset_bottom = 514.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 32
+text = "0.0 secs"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_4d7sh")
+
+[node name="Attack" type="AnimatedSprite2D" parent="."]
+position = Vector2(470, 439)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nsnm2")
+script = ExtResource("42_qilgh")
+
+[node name="decaydisplay" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 535.0
+offset_top = 478.0
+offset_right = 637.0
+offset_bottom = 514.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 32
+text = "0.0 secs"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_4d7sh")
+
+[node name="Decay" type="AnimatedSprite2D" parent="."]
+position = Vector2(586, 439)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nsnm2")
+script = ExtResource("42_qilgh")
+
+[node name="sustaindisplay" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 419.0
+offset_top = 603.0
+offset_right = 520.0
+offset_bottom = 639.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 32
+text = "0.0 %"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_4d7sh")
+
+[node name="Sustain" type="AnimatedSprite2D" parent="."]
+position = Vector2(470, 564)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nsnm2")
+script = ExtResource("42_qilgh")
+
+[node name="releasedisplay" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 535.0
+offset_top = 603.0
+offset_right = 636.0
+offset_bottom = 639.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 32
+text = "0.0 secs"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_4d7sh")
+
+[node name="Release" type="AnimatedSprite2D" parent="."]
+position = Vector2(586, 564)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nsnm2")
+script = ExtResource("42_qilgh")
+
 [node name="Sequence Buttons" type="Node2D" parent="."]
-position = Vector2(576, 257)
+position = Vector2(576, 225)
 
 [node name="1" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(-399, -65)
@@ -324,6 +540,7 @@ theme_override_font_sizes/normal_font_size = 32
 text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
+metadata/_edit_use_anchors_ = true
 
 [node name="2" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(-285, -65)
@@ -345,6 +562,7 @@ theme_override_font_sizes/normal_font_size = 32
 text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
+metadata/_edit_use_anchors_ = true
 
 [node name="3" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(-171, -65)
@@ -368,6 +586,7 @@ theme_override_font_sizes/normal_font_size = 32
 text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
+metadata/_edit_use_anchors_ = true
 
 [node name="4" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(-57, -65)
@@ -389,6 +608,7 @@ theme_override_font_sizes/normal_font_size = 32
 text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
+metadata/_edit_use_anchors_ = true
 
 [node name="5" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(57, -65)
@@ -410,6 +630,7 @@ theme_override_font_sizes/normal_font_size = 32
 text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
+metadata/_edit_use_anchors_ = true
 
 [node name="6" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(171, -65)
@@ -431,6 +652,7 @@ theme_override_font_sizes/normal_font_size = 32
 text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
+metadata/_edit_use_anchors_ = true
 
 [node name="7" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(285, -65)
@@ -452,6 +674,7 @@ theme_override_font_sizes/normal_font_size = 32
 text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
+metadata/_edit_use_anchors_ = true
 
 [node name="8" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(399, -65)
@@ -473,6 +696,7 @@ theme_override_font_sizes/normal_font_size = 32
 text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
+metadata/_edit_use_anchors_ = true
 
 [node name="9" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(-399, 79)
@@ -494,7 +718,6 @@ theme_override_font_sizes/normal_font_size = 32
 text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
-metadata/_edit_use_anchors_ = true
 
 [node name="10" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(-285, 79)
@@ -516,7 +739,6 @@ theme_override_font_sizes/normal_font_size = 32
 text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
-metadata/_edit_use_anchors_ = true
 
 [node name="11" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(-171, 79)
@@ -538,7 +760,6 @@ theme_override_font_sizes/normal_font_size = 32
 text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
-metadata/_edit_use_anchors_ = true
 
 [node name="12" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(-57, 79)
@@ -560,7 +781,6 @@ theme_override_font_sizes/normal_font_size = 32
 text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
-metadata/_edit_use_anchors_ = true
 
 [node name="13" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(57, 79)
@@ -582,7 +802,6 @@ theme_override_font_sizes/normal_font_size = 32
 text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
-metadata/_edit_use_anchors_ = true
 
 [node name="14" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(171, 79)
@@ -604,7 +823,6 @@ theme_override_font_sizes/normal_font_size = 32
 text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
-metadata/_edit_use_anchors_ = true
 
 [node name="15" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(285, 79)
@@ -626,7 +844,6 @@ theme_override_font_sizes/normal_font_size = 32
 text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
-metadata/_edit_use_anchors_ = true
 
 [node name="16" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(399, 79)
@@ -648,10 +865,98 @@ theme_override_font_sizes/normal_font_size = 32
 text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
-metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="stepsdown" to="stepsdisplay" method="_on_stepsdown_pressed"]
-[connection signal="pressed" from="stepsup" to="stepsdisplay" method="_on_stepsup_pressed"]
+[node name="mididisplay" type="RichTextLabel" parent="."]
+offset_left = 3.0
+offset_top = 608.0
+offset_right = 404.0
+offset_bottom = 648.0
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 32
+text = "midi display here"
+scroll_active = false
+script = ExtResource("4_4d7sh")
+
+[node name="A" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 382.0
+offset_top = 399.0
+offset_right = 430.0
+offset_bottom = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(52, 30)
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 48
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="D" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 626.0
+offset_top = 399.0
+offset_right = 674.0
+offset_bottom = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(52, 30)
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 48
+text = "D"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A2" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 382.0
+offset_top = 525.0
+offset_right = 430.0
+offset_bottom = 606.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(52, 30)
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 48
+text = "S
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="D2" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 626.0
+offset_top = 525.0
+offset_right = 674.0
+offset_bottom = 606.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(52, 30)
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 48
+text = "R
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="stepsdown" to="octdisplay" method="_on_stepsdown_pressed"]
+[connection signal="pressed" from="stepsup" to="octdisplay" method="_on_stepsup_pressed"]
 [connection signal="pressed" from="octdown" to="octdisplay" method="_on_octdown_pressed"]
 [connection signal="pressed" from="octup" to="octdisplay" method="_on_octup_pressed"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
