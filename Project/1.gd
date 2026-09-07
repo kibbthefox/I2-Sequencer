@@ -12,29 +12,28 @@ func _on_input_event(_viewport, event, _shape_idx):
 
 
 func on_click():
-	GlobalVariable.selected = int(get_parent().name)
+	GlobalVariable.selected = int(get_parent().name) + GlobalVariable.page * 16
 
 
 func _process(_delta: float) -> void:
-	if not GlobalVariable.selected == int(get_parent().name):
+	if not GlobalVariable.selected == int(get_parent().name) + GlobalVariable.page * 16:
 		state = "sitting"
 	else:
 		state = "waiting"
 	if state == "waiting" and GlobalVariable.notepressed == true:
 		GlobalVariable.selected = 0
-		GlobalVariable.sequence[int(get_parent().name) - 1] = GlobalVariable.latestnote
+		GlobalVariable.sequence[int(get_parent().name) - 1 + GlobalVariable.page * 16] = GlobalVariable.latestnote
 	elif state == "waiting" and Input.is_action_just_pressed("Delete"):
 		state = "sitting"
-		GlobalVariable.sequence[int(get_parent().name) - 1] = 0
+		GlobalVariable.sequence[int(get_parent().name) - 1 + GlobalVariable.page * 16] = 0
 		GlobalVariable.selected = 0
-	if int(get_parent().name) > GlobalVariable.stepamount:
+	if int(get_parent().name) + GlobalVariable.page * 16 > GlobalVariable.stepamount:
 		$"..".frame = 4
-	elif GlobalVariable.step == int(get_parent().name):
+	elif GlobalVariable.step == int(get_parent().name) + GlobalVariable.page * 16:
 		$"..".frame = 3
 	elif state == "waiting":
 		$"..".frame = 1
-	elif not (GlobalVariable.sequence[int(get_parent().name) - 1]) == 0:
+	elif not (GlobalVariable.sequence[int(get_parent().name) - 1 + GlobalVariable.page * 16]) == 0:
 		$"..".frame = 2
 	elif state == "sitting":
 		$"..".frame = 0
-	

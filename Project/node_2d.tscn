@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://dcwopsgo0bylm"]
+[gd_scene load_steps=72 format=3 uid="uid://dcwopsgo0bylm"]
 
 [ext_resource type="Texture2D" uid="uid://8n3w8wobra60" path="res://New Piskel-1.png.png" id="1_4d7sh"]
 [ext_resource type="Script" uid="uid://cj4nuq3kiir86" path="res://Interface.gd" id="1_hqns4"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bwklihd7xh43o" path="res://Assets/knob/knob00 copy.png" id="5_3ngjr"]
 [ext_resource type="Texture2D" uid="uid://cdp8aokrn85bc" path="res://Assets/line.png" id="5_fs4d3"]
 [ext_resource type="Texture2D" uid="uid://cfvxh4emh1nk0" path="res://Assets/playpause/playing.png" id="6_0h7mo"]
+[ext_resource type="Script" uid="uid://cbsg6w6m1xwv0" path="res://pageturner.gd" id="6_4qosj"]
 [ext_resource type="Texture2D" uid="uid://4jxxmd7dc0jl" path="res://Assets/ball.png" id="6_7vxoj"]
 [ext_resource type="Texture2D" uid="uid://bxr8xddv2w7pu" path="res://Assets/Down.png" id="6_flf07"]
 [ext_resource type="Texture2D" uid="uid://c2sledpqh0e7h" path="res://Buttons/button_0.png" id="6_ir8iy"]
@@ -48,6 +49,8 @@
 [ext_resource type="Texture2D" uid="uid://da8dbue17b6j" path="res://Assets/knob/knob26 copy.png" id="31_j02gt"]
 [ext_resource type="Texture2D" uid="uid://cuxllue2e61dn" path="res://Assets/knob/knob27 copy.png" id="32_thyvg"]
 [ext_resource type="Script" uid="uid://n1jnkr5au1yk" path="res://knob.gd" id="42_qilgh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qilgh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjqkl"]
 
@@ -240,6 +243,20 @@ theme_override_font_sizes/normal_font_size = 112
 bbcode_enabled = true
 text = "I2 Sequencer"
 horizontal_alignment = 1
+
+[node name="pageturner" type="Button" parent="."]
+offset_left = 1083.0
+offset_top = 212.0
+offset_right = 1131.0
+offset_bottom = 252.0
+rotation = -1.5708
+pivot_offset = Vector2(24, 20)
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_qilgh")
+icon = ExtResource("6_flf07")
+flat = true
+icon_alignment = 1
+script = ExtResource("6_4qosj")
 
 [node name="Line" type="Sprite2D" parent="."]
 position = Vector2(858, 610)
@@ -955,6 +972,7 @@ text = "R
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="pressed" from="pageturner" to="pageturner" method="_on_pressed"]
 [connection signal="pressed" from="stepsdown" to="octdisplay" method="_on_stepsdown_pressed"]
 [connection signal="pressed" from="stepsup" to="octdisplay" method="_on_stepsup_pressed"]
 [connection signal="pressed" from="octdown" to="octdisplay" method="_on_octdown_pressed"]

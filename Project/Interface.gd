@@ -19,6 +19,7 @@ var sustaincalc
 var juststarted:bool = false
 var jshelper:float
 
+
 func _ready():
 	OS.open_midi_inputs()
 	print(OS.get_connected_midi_inputs())
@@ -62,6 +63,7 @@ func _process(_delta: float) -> void:
 		if Input.is_action_just_released(keyboardarr[i]):
 			if latestkeyboardnote == keyboardarr[i]:
 				whatsletgo[1] = "k"
+
 
 func _on_play_pressed() -> void:
 	time = 0
@@ -113,7 +115,6 @@ func _physics_process(_delta: float) -> void:
 			$NormalAudio.volume_db = (sustaincalc - 40)
 
 
-
 func playprocess():
 	releasehelper = "standstill"
 	if GlobalVariable.attack > 0:
@@ -125,5 +126,3 @@ func playprocess():
 		$NormalAudio.volume_db = 0
 		$NormalAudio.play()
 	$NormalAudio.pitch_scale = (pitcharray[GlobalVariable.sequence[GlobalVariable.step - 1] - floor(GlobalVariable.sequence[GlobalVariable.step - 1]/12.0) * 12] * (2 ** (floor(GlobalVariable.sequence[GlobalVariable.step - 1]/12.0) - 6)))
-	
-	

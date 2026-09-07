@@ -37,5 +37,5 @@ func _on_stepsdown_pressed() -> void:
 
 
 func _on_stepsup_pressed() -> void:
-	if GlobalVariable.stepamount < 16:
+	if GlobalVariable.stepamount < 32:
 		GlobalVariable.stepamount += 1

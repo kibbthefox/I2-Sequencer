@@ -5,6 +5,7 @@ var clicked:bool = false
 @onready var r = $"../Line".position.x + 100
 @onready var l = $"../Line".position.x - 100
 
+
 func _process(_delta: float) -> void:
 	distancesqr = get_global_mouse_position().distance_squared_to($".".global_position)
 	if Input.is_action_just_pressed("leftclick") and distancesqr < 1600:
