@@ -1,7 +1,7 @@
 # **I2 Sequencer**
 
 ## General Information
-The I2S is a Sequencer that ranges 8 octaves (C2-C9), has up to 16 steps, MIDI + keyboard input, and full ASDR controls.
+The I2S is a Sequencer that ranges 8 octaves (C2-C9), has up to 32 steps, MIDI + keyboard input, full ASDR controls, and custom sound control.
 
 I used Godot (GDScript) for scripting and Piskel (Pixel art website) for making assets. I made it for the Hackclub Program [Stardance](https://stardance.hackclub.com/home). I love making music and music gear so I thought it would be fun to code a music-related program!
 
@@ -9,11 +9,6 @@ Fun Fact! When creating the name (I2 Sequencer), I decided to use the second let
 
 ## Usage
 Click on a step and then use MIDI or a computer keyboard to input notes! Use the delete key on your keyboard to remove any notes. Use - and + to change the octave on your keyboard.
-
-## Links
-There will eventually be a youtube link here and potentially an itch.io link if I get this project to run there,
-
-[Github](https://github.com/kibbthefox/K1-Monophonic-Sampler)
 
 ## Opening Instructions
 
