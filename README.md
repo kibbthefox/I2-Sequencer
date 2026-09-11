@@ -10,6 +10,9 @@ Fun Fact! When creating the name (I2 Sequencer), I decided to use the second let
 ## Usage
 Click on a step and then use MIDI or a computer keyboard to input notes! Use the delete key on your keyboard to remove any notes. Use - and + to change the octave on your keyboard.
 
+## MIDI Instructions
+ To use MIDI input, your MIDI keyboard MUST be plugged in when the program launches. You can always restart. After trying, I was not able to code a button to connect to MIDI :( 
+
 ## Opening Instructions
 
 ### Versions Tested
@@ -30,8 +33,8 @@ To open, uncompress the zip, and right click on the file. Select "Open" and then
 
 Uncompress the .zip and open the file. If a windows security window shows up, click "more info" and then click "Run Anyway"
 
-## MIDI Instructions
- To use MIDI input, your MIDI keyboard MUST be plugged in when the program launches. You can always restart. After trying, I was not able to code a button to connect to MIDI :( 
+## AI Disclosure
+I always tried to actually make the code myself. There is only one place where I literally couldn't do this. When uploading a .wav file, there is a lot of stuff that needs to be read in the .wav file that is just too complex for me. I didn't want to spend a week learning how to decode and read it, and then do bug fixing on that. Therefore, AI helped write the code to decode and interpret the .wav file. (Without it, some .wav files would just sound like noise.) Outside of audio file uploading, AI didn't write any code in my project.
 
 ## Screenshots
 
