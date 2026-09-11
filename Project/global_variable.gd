@@ -17,3 +17,5 @@ var sustain
 var release
 var knobclicked:String = "Open"
 var page:int = 0
+var filetext = "default"
+var justopened = false

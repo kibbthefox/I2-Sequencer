@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://dcwopsgo0bylm"]
+[gd_scene load_steps=75 format=3 uid="uid://dcwopsgo0bylm"]
 
 [ext_resource type="Texture2D" uid="uid://8n3w8wobra60" path="res://New Piskel-1.png.png" id="1_4d7sh"]
 [ext_resource type="Script" uid="uid://cj4nuq3kiir86" path="res://Interface.gd" id="1_hqns4"]
@@ -27,10 +27,13 @@
 [ext_resource type="Script" uid="uid://j31qtwiuce5d" path="res://notedisplays.gd" id="11_hqns4"]
 [ext_resource type="Texture2D" uid="uid://f4vqqaijppv5" path="res://Assets/knob/knob07 copy.png" id="12_b8fb0"]
 [ext_resource type="Script" uid="uid://dbl4t8cjpso0d" path="res://1.gd" id="12_x0ka3"]
+[ext_resource type="Texture2D" uid="uid://cwr5kp55snrni" path="res://Assets/upload.png" id="13_4qosj"]
 [ext_resource type="Texture2D" uid="uid://bgfthod3mrku1" path="res://Buttons/button_4.png" id="13_d2bti"]
 [ext_resource type="Texture2D" uid="uid://dsd4dc2igy3c" path="res://Assets/knob/knob08 copy.png" id="13_ma08v"]
+[ext_resource type="Script" uid="uid://df3w70dehrqd4" path="res://filedisplay.gd" id="14_kfelt"]
 [ext_resource type="Texture2D" uid="uid://ccjgakufw3kfx" path="res://Assets/knob/knob09 copy.png" id="14_s32dh"]
 [ext_resource type="Texture2D" uid="uid://dbjagnjgucla1" path="res://Assets/knob/knob10 copy.png" id="15_037st"]
+[ext_resource type="Script" uid="uid://dbc8vodfirty8" path="res://file_upload.gd" id="15_cjlbh"]
 [ext_resource type="Texture2D" uid="uid://v0vgh08ux2i7" path="res://Assets/knob/knob11 copy.png" id="16_6orn5"]
 [ext_resource type="Texture2D" uid="uid://5ocr82vrel0j" path="res://Assets/knob/knob12 copy.png" id="17_whnp6"]
 [ext_resource type="Texture2D" uid="uid://b5kfjnierym8e" path="res://Assets/knob/knob13 copy.png" id="18_22e24"]
@@ -411,10 +414,10 @@ flat = true
 icon_alignment = 1
 
 [node name="Play" type="Button" parent="."]
-offset_left = 129.0
-offset_top = 414.0
-offset_right = 225.0
-offset_bottom = 510.0
+offset_left = 130.0
+offset_top = 397.0
+offset_right = 226.0
+offset_bottom = 493.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_0h7mo")
 icon = ExtResource("6_0h7mo")
@@ -423,16 +426,50 @@ clip_text = true
 icon_alignment = 1
 
 [node name="Stop" type="Button" parent="."]
-offset_left = 243.0
-offset_top = 414.0
-offset_right = 339.0
-offset_bottom = 510.0
+offset_left = 244.0
+offset_top = 397.0
+offset_right = 340.0
+offset_bottom = 493.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_nr8wp")
 icon = ExtResource("7_nr8wp")
 flat = true
 clip_text = true
 icon_alignment = 1
+
+[node name="filedisplay" type="RichTextLabel" parent="."]
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 343.0
+offset_bottom = 45.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 32
+text = "upload display here"
+scroll_active = false
+script = ExtResource("14_kfelt")
+
+[node name="FileUpload" type="Button" parent="."]
+offset_left = 244.0
+offset_top = 511.0
+offset_right = 340.0
+offset_bottom = 607.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_0h7mo")
+icon = ExtResource("13_4qosj")
+flat = true
+clip_text = true
+icon_alignment = 1
+script = ExtResource("15_cjlbh")
+
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+initial_position = 1
+ok_button_text = "Open"
+dialog_hide_on_ok = true
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.mp3", "*.wav")
 
 [node name="attackdisplay" type="RichTextLabel" parent="."]
 anchors_preset = 8
@@ -452,6 +489,25 @@ text = "0.0 secs"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_4d7sh")
+
+[node name="A" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 382.0
+offset_top = 399.0
+offset_right = 430.0
+offset_bottom = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(52, 30)
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 48
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Attack" type="AnimatedSprite2D" parent="."]
 position = Vector2(470, 439)
@@ -478,6 +534,25 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_4d7sh")
 
+[node name="D" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 626.0
+offset_top = 399.0
+offset_right = 674.0
+offset_bottom = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(52, 30)
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 48
+text = "D"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Decay" type="AnimatedSprite2D" parent="."]
 position = Vector2(586, 439)
 scale = Vector2(2, 2)
@@ -503,11 +578,51 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_4d7sh")
 
+[node name="S" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 382.0
+offset_top = 525.0
+offset_right = 430.0
+offset_bottom = 606.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(52, 30)
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 48
+text = "S
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Sustain" type="AnimatedSprite2D" parent="."]
 position = Vector2(470, 564)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_nsnm2")
 script = ExtResource("42_qilgh")
+
+[node name="Release2" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 626.0
+offset_top = 525.0
+offset_right = 674.0
+offset_bottom = 606.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(52, 30)
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 48
+text = "R
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="releasedisplay" type="RichTextLabel" parent="."]
 anchors_preset = 8
@@ -533,6 +648,17 @@ position = Vector2(586, 564)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_nsnm2")
 script = ExtResource("42_qilgh")
+
+[node name="mididisplay" type="RichTextLabel" parent="."]
+offset_left = 3.0
+offset_top = 608.0
+offset_right = 404.0
+offset_bottom = 648.0
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 32
+text = "midi display here"
+scroll_active = false
+script = ExtResource("4_4d7sh")
 
 [node name="Sequence Buttons" type="Node2D" parent="."]
 position = Vector2(576, 225)
@@ -883,95 +1009,6 @@ text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
 
-[node name="mididisplay" type="RichTextLabel" parent="."]
-offset_left = 3.0
-offset_top = 608.0
-offset_right = 404.0
-offset_bottom = 648.0
-theme_override_fonts/normal_font = ExtResource("3_ir8iy")
-theme_override_font_sizes/normal_font_size = 32
-text = "midi display here"
-scroll_active = false
-script = ExtResource("4_4d7sh")
-
-[node name="A" type="RichTextLabel" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 382.0
-offset_top = 399.0
-offset_right = 430.0
-offset_bottom = 480.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(52, 30)
-theme_override_fonts/normal_font = ExtResource("3_ir8iy")
-theme_override_font_sizes/normal_font_size = 48
-text = "A"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="D" type="RichTextLabel" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 626.0
-offset_top = 399.0
-offset_right = 674.0
-offset_bottom = 480.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(52, 30)
-theme_override_fonts/normal_font = ExtResource("3_ir8iy")
-theme_override_font_sizes/normal_font_size = 48
-text = "D"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="A2" type="RichTextLabel" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 382.0
-offset_top = 525.0
-offset_right = 430.0
-offset_bottom = 606.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(52, 30)
-theme_override_fonts/normal_font = ExtResource("3_ir8iy")
-theme_override_font_sizes/normal_font_size = 48
-text = "S
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="D2" type="RichTextLabel" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 626.0
-offset_top = 525.0
-offset_right = 674.0
-offset_bottom = 606.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(52, 30)
-theme_override_fonts/normal_font = ExtResource("3_ir8iy")
-theme_override_font_sizes/normal_font_size = 48
-text = "R
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [connection signal="pressed" from="pageturner" to="pageturner" method="_on_pressed"]
 [connection signal="pressed" from="stepsdown" to="octdisplay" method="_on_stepsdown_pressed"]
 [connection signal="pressed" from="stepsup" to="octdisplay" method="_on_stepsup_pressed"]
@@ -979,6 +1016,8 @@ vertical_alignment = 1
 [connection signal="pressed" from="octup" to="octdisplay" method="_on_octup_pressed"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Stop" to="." method="_on_stop_pressed"]
+[connection signal="pressed" from="FileUpload" to="FileUpload" method="_on_pressed"]
+[connection signal="file_selected" from="FileDialog" to="FileUpload" method="_on_file_dialog_file_selected"]
 [connection signal="input_event" from="Sequence Buttons/1/1" to="Sequence Buttons/1/1" method="_on_input_event"]
 [connection signal="input_event" from="Sequence Buttons/2/2" to="Sequence Buttons/2/2" method="_on_input_event"]
 [connection signal="input_event" from="Sequence Buttons/3/3" to="Sequence Buttons/3/3" method="_on_input_event"]
