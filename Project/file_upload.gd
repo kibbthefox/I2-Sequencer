@@ -1,11 +1,13 @@
 extends Button
 
-
-
 # I try to use AI as little as possible. unfortunately, I didn't want to spend 10 hours learning all
 # the different types of wav files and how to check them. 95% of the code below is AI. I wish it
 # wasn't, but its what I had to do to finish this project.
-
+func _process(_delta: float) -> void:
+	if GlobalVariable.page == 0:
+		self.visible = true
+	else:
+		self.visible = false
 
 func _on_pressed() -> void:
 	$"../FileDialog".popup()
@@ -24,6 +26,7 @@ func _on_file_dialog_file_selected(path: String) -> void:
 		$"../DualAudio".stream = stream
 		GlobalVariable.justopened = true
 		GlobalVariable.filetext = path.get_file()
+
 
 func load_audio(path: String) -> AudioStream:
 	var ext := path.get_extension().to_lower()
@@ -52,6 +55,7 @@ func is_wav_file(path: String) -> bool:
 	var wave := file.get_buffer(4).get_string_from_ascii()
 
 	return riff == "RIFF" and wave == "WAVE"
+
 
 func load_wav(path: String) -> AudioStreamWAV:
 	var file := FileAccess.open(path, FileAccess.READ)

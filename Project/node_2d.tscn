@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://dcwopsgo0bylm"]
+[gd_scene load_steps=81 format=3 uid="uid://dcwopsgo0bylm"]
 
 [ext_resource type="Texture2D" uid="uid://8n3w8wobra60" path="res://New Piskel-1.png.png" id="1_4d7sh"]
 [ext_resource type="Script" uid="uid://cj4nuq3kiir86" path="res://Interface.gd" id="1_hqns4"]
@@ -36,8 +36,10 @@
 [ext_resource type="Texture2D" uid="uid://dbjagnjgucla1" path="res://Assets/knob/knob10 copy.png" id="15_037st"]
 [ext_resource type="Script" uid="uid://dbc8vodfirty8" path="res://file_upload.gd" id="15_cjlbh"]
 [ext_resource type="Texture2D" uid="uid://v0vgh08ux2i7" path="res://Assets/knob/knob11 copy.png" id="16_6orn5"]
+[ext_resource type="Texture2D" uid="uid://cg33uu2fqd65r" path="res://Assets/Mode/mode1.png" id="17_s32dh"]
 [ext_resource type="Texture2D" uid="uid://5ocr82vrel0j" path="res://Assets/knob/knob12 copy.png" id="17_whnp6"]
 [ext_resource type="Texture2D" uid="uid://b5kfjnierym8e" path="res://Assets/knob/knob13 copy.png" id="18_22e24"]
+[ext_resource type="Texture2D" uid="uid://bkqq8w8wwk11e" path="res://Assets/Mode/mode0.png" id="18_037st"]
 [ext_resource type="Texture2D" uid="uid://da8jy4b0epjjh" path="res://Assets/knob/knob14 copy.png" id="19_m7xe6"]
 [ext_resource type="Texture2D" uid="uid://i4apuvxpbr25" path="res://Assets/knob/knob15 copy.png" id="20_wqmsq"]
 [ext_resource type="Texture2D" uid="uid://dngfyba5sc6eh" path="res://Assets/knob/knob16 copy.png" id="21_fkgk1"]
@@ -236,6 +238,7 @@ script = ExtResource("1_hqns4")
 stream = ExtResource("3_x0ka3")
 
 [node name="DualAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_x0ka3")
 
 [node name="RainbowBg" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.47451)
@@ -250,7 +253,7 @@ offset_right = 974.0
 offset_bottom = 88.0
 theme_override_fonts/normal_font = ExtResource("3_ir8iy")
 theme_override_font_sizes/normal_font_size = 32
-text = "Gay Edition :3"
+text = "Gay Edition >:3"
 horizontal_alignment = 1
 
 [node name="BG Blue" type="Sprite2D" parent="."]
@@ -470,6 +473,30 @@ flat = true
 clip_text = true
 icon_alignment = 1
 
+[node name="Normal" type="Button" parent="."]
+offset_left = 130.0
+offset_top = 511.0
+offset_right = 226.0
+offset_bottom = 607.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_0h7mo")
+icon = ExtResource("17_s32dh")
+flat = true
+clip_text = true
+icon_alignment = 1
+
+[node name="Dual" type="Button" parent="."]
+offset_left = 244.0
+offset_top = 511.0
+offset_right = 340.0
+offset_bottom = 607.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_0h7mo")
+icon = ExtResource("18_037st")
+flat = true
+clip_text = true
+icon_alignment = 1
+
 [node name="filedisplay" type="RichTextLabel" parent="."]
 offset_left = 15.0
 offset_top = 13.0
@@ -483,10 +510,10 @@ scroll_active = false
 script = ExtResource("14_kfelt")
 
 [node name="FileUpload" type="Button" parent="."]
-offset_left = 244.0
-offset_top = 511.0
-offset_right = 340.0
-offset_bottom = 607.0
+offset_left = 15.0
+offset_top = 112.0
+offset_right = 111.0
+offset_bottom = 208.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_0h7mo")
 icon = ExtResource("13_4qosj")
@@ -1042,6 +1069,16 @@ text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
 
+[node name="ModeDisplay" type="RichTextLabel" parent="."]
+offset_left = 4.0
+offset_top = 568.0
+offset_right = 129.0
+offset_bottom = 608.0
+theme_override_fonts/normal_font = ExtResource("3_ir8iy")
+theme_override_font_sizes/normal_font_size = 32
+text = "mode display"
+script = ExtResource("4_4d7sh")
+
 [connection signal="pressed" from="pageturner" to="pageturner" method="_on_pressed"]
 [connection signal="pressed" from="Theme Button" to="Theme Button" method="_on_pressed"]
 [connection signal="pressed" from="stepsdown" to="octdisplay" method="_on_stepsdown_pressed"]
@@ -1050,6 +1087,8 @@ script = ExtResource("11_hqns4")
 [connection signal="pressed" from="octup" to="octdisplay" method="_on_octup_pressed"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Stop" to="." method="_on_stop_pressed"]
+[connection signal="pressed" from="Normal" to="." method="_on_normal_pressed"]
+[connection signal="pressed" from="Dual" to="." method="_on_dual_pressed"]
 [connection signal="pressed" from="FileUpload" to="FileUpload" method="_on_pressed"]
 [connection signal="file_selected" from="FileDialog" to="FileUpload" method="_on_file_dialog_file_selected"]
 [connection signal="input_event" from="Sequence Buttons/1/1" to="Sequence Buttons/1/1" method="_on_input_event"]

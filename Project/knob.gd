@@ -7,7 +7,6 @@ var arotate
 var helper
 var mouseorig:float
 
-
 func _ready():
 	if self.name == "Attack":
 		arotate = -2.1
