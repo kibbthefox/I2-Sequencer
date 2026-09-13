@@ -22,3 +22,4 @@ var page:int = 0
 var filetext = "default"
 var justopened = false
 var mode:String = "Normal"
+var uploadlastpressed:bool = true

@@ -255,6 +255,7 @@ theme_override_fonts/normal_font = ExtResource("3_ir8iy")
 theme_override_font_sizes/normal_font_size = 32
 text = "Gay Edition >:3"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="BG Blue" type="Sprite2D" parent="."]
 position = Vector2(577.75, 323.25)
@@ -270,6 +271,7 @@ theme_override_font_sizes/normal_font_size = 112
 bbcode_enabled = true
 text = "I2 Sequencer"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="pageturner" type="Button" parent="."]
 offset_left = 1083.0
@@ -284,6 +286,7 @@ icon = ExtResource("6_flf07")
 flat = true
 icon_alignment = 1
 script = ExtResource("6_4qosj")
+metadata/_edit_use_anchors_ = true
 
 [node name="Theme Button" type="Button" parent="."]
 offset_left = 1092.0
@@ -296,6 +299,7 @@ icon = ExtResource("53_2v765")
 flat = true
 icon_alignment = 1
 script = ExtResource("54_b8fb0")
+metadata/_edit_use_anchors_ = true
 
 [node name="Line" type="Sprite2D" parent="."]
 position = Vector2(858, 610)
@@ -326,6 +330,7 @@ text = "Steps
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="stepsdisplay" type="RichTextLabel" parent="."]
 anchors_preset = 8
@@ -345,6 +350,7 @@ text = "16"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_4d7sh")
+metadata/_edit_use_anchors_ = true
 
 [node name="stepsdown" type="Button" parent="."]
 offset_left = 888.0
@@ -356,6 +362,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_rjqkl")
 icon = ExtResource("6_flf07")
 flat = true
 icon_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="stepsup" type="Button" parent="."]
 offset_left = 888.0
@@ -367,6 +374,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_rjqkl")
 icon = ExtResource("7_k73cj")
 flat = true
 icon_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Oct" type="RichTextLabel" parent="."]
 anchors_preset = 8
@@ -387,6 +395,7 @@ text = "Oct
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Tempo" type="RichTextLabel" parent="."]
 anchors_preset = 8
@@ -407,6 +416,7 @@ text = "Speed
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="octdisplay" type="RichTextLabel" parent="."]
 anchors_preset = 8
@@ -426,6 +436,7 @@ text = "4"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_4d7sh")
+metadata/_edit_use_anchors_ = true
 
 [node name="octdown" type="Button" parent="."]
 offset_left = 720.0
@@ -437,6 +448,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_rjqkl")
 icon = ExtResource("6_flf07")
 flat = true
 icon_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="octup" type="Button" parent="."]
 offset_left = 720.0
@@ -448,6 +460,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_rjqkl")
 icon = ExtResource("7_k73cj")
 flat = true
 icon_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Play" type="Button" parent="."]
 offset_left = 130.0
@@ -460,6 +473,7 @@ icon = ExtResource("6_0h7mo")
 flat = true
 clip_text = true
 icon_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Stop" type="Button" parent="."]
 offset_left = 244.0
@@ -472,6 +486,7 @@ icon = ExtResource("7_nr8wp")
 flat = true
 clip_text = true
 icon_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Normal" type="Button" parent="."]
 offset_left = 130.0
@@ -484,6 +499,7 @@ icon = ExtResource("17_s32dh")
 flat = true
 clip_text = true
 icon_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Dual" type="Button" parent="."]
 offset_left = 244.0
@@ -496,6 +512,7 @@ icon = ExtResource("18_037st")
 flat = true
 clip_text = true
 icon_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="filedisplay" type="RichTextLabel" parent="."]
 offset_left = 15.0
@@ -508,6 +525,7 @@ theme_override_font_sizes/normal_font_size = 32
 text = "upload display here"
 scroll_active = false
 script = ExtResource("14_kfelt")
+metadata/_edit_use_anchors_ = true
 
 [node name="FileUpload" type="Button" parent="."]
 offset_left = 15.0
@@ -521,6 +539,21 @@ flat = true
 clip_text = true
 icon_alignment = 1
 script = ExtResource("15_cjlbh")
+metadata/_edit_use_anchors_ = true
+
+[node name="FileUploadDual" type="Button" parent="."]
+offset_left = 15.0
+offset_top = 256.0
+offset_right = 111.0
+offset_bottom = 352.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_0h7mo")
+icon = ExtResource("13_4qosj")
+flat = true
+clip_text = true
+icon_alignment = 1
+script = ExtResource("15_cjlbh")
+metadata/_edit_use_anchors_ = true
 
 [node name="FileDialog" type="FileDialog" parent="."]
 title = "Open a File"
@@ -549,6 +582,7 @@ text = "0.0 secs"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_4d7sh")
+metadata/_edit_use_anchors_ = true
 
 [node name="A" type="RichTextLabel" parent="."]
 anchors_preset = 8
@@ -568,6 +602,7 @@ theme_override_font_sizes/normal_font_size = 48
 text = "A"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Attack" type="AnimatedSprite2D" parent="."]
 position = Vector2(470, 439)
@@ -593,6 +628,7 @@ text = "0.0 secs"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_4d7sh")
+metadata/_edit_use_anchors_ = true
 
 [node name="D" type="RichTextLabel" parent="."]
 anchors_preset = 8
@@ -612,6 +648,7 @@ theme_override_font_sizes/normal_font_size = 48
 text = "D"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Decay" type="AnimatedSprite2D" parent="."]
 position = Vector2(586, 439)
@@ -637,6 +674,7 @@ text = "0.0 %"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_4d7sh")
+metadata/_edit_use_anchors_ = true
 
 [node name="S" type="RichTextLabel" parent="."]
 anchors_preset = 8
@@ -657,6 +695,7 @@ text = "S
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Sustain" type="AnimatedSprite2D" parent="."]
 position = Vector2(470, 564)
@@ -683,6 +722,7 @@ text = "R
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="releasedisplay" type="RichTextLabel" parent="."]
 anchors_preset = 8
@@ -702,6 +742,7 @@ text = "0.0 secs"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_4d7sh")
+metadata/_edit_use_anchors_ = true
 
 [node name="Release" type="AnimatedSprite2D" parent="."]
 position = Vector2(586, 564)
@@ -719,6 +760,7 @@ theme_override_font_sizes/normal_font_size = 32
 text = "midi display here"
 scroll_active = false
 script = ExtResource("4_4d7sh")
+metadata/_edit_use_anchors_ = true
 
 [node name="Sequence Buttons" type="Node2D" parent="."]
 position = Vector2(576, 225)
@@ -921,6 +963,7 @@ theme_override_font_sizes/normal_font_size = 32
 text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
+metadata/_edit_use_anchors_ = true
 
 [node name="10" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(-285, 79)
@@ -942,6 +985,7 @@ theme_override_font_sizes/normal_font_size = 32
 text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
+metadata/_edit_use_anchors_ = true
 
 [node name="11" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(-171, 79)
@@ -963,6 +1007,7 @@ theme_override_font_sizes/normal_font_size = 32
 text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
+metadata/_edit_use_anchors_ = true
 
 [node name="12" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(-57, 79)
@@ -984,6 +1029,7 @@ theme_override_font_sizes/normal_font_size = 32
 text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
+metadata/_edit_use_anchors_ = true
 
 [node name="13" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(57, 79)
@@ -1005,6 +1051,7 @@ theme_override_font_sizes/normal_font_size = 32
 text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
+metadata/_edit_use_anchors_ = true
 
 [node name="14" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(171, 79)
@@ -1026,6 +1073,7 @@ theme_override_font_sizes/normal_font_size = 32
 text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
+metadata/_edit_use_anchors_ = true
 
 [node name="15" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(285, 79)
@@ -1047,6 +1095,7 @@ theme_override_font_sizes/normal_font_size = 32
 text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
+metadata/_edit_use_anchors_ = true
 
 [node name="16" type="AnimatedSprite2D" parent="Sequence Buttons"]
 position = Vector2(399, 79)
@@ -1068,6 +1117,7 @@ theme_override_font_sizes/normal_font_size = 32
 text = "--"
 horizontal_alignment = 1
 script = ExtResource("11_hqns4")
+metadata/_edit_use_anchors_ = true
 
 [node name="ModeDisplay" type="RichTextLabel" parent="."]
 offset_left = 4.0
@@ -1078,6 +1128,7 @@ theme_override_fonts/normal_font = ExtResource("3_ir8iy")
 theme_override_font_sizes/normal_font_size = 32
 text = "mode display"
 script = ExtResource("4_4d7sh")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="pageturner" to="pageturner" method="_on_pressed"]
 [connection signal="pressed" from="Theme Button" to="Theme Button" method="_on_pressed"]
@@ -1090,6 +1141,7 @@ script = ExtResource("4_4d7sh")
 [connection signal="pressed" from="Normal" to="." method="_on_normal_pressed"]
 [connection signal="pressed" from="Dual" to="." method="_on_dual_pressed"]
 [connection signal="pressed" from="FileUpload" to="FileUpload" method="_on_pressed"]
+[connection signal="pressed" from="FileUploadDual" to="FileUploadDual" method="_on_dual_pressed"]
 [connection signal="file_selected" from="FileDialog" to="FileUpload" method="_on_file_dialog_file_selected"]
 [connection signal="input_event" from="Sequence Buttons/1/1" to="Sequence Buttons/1/1" method="_on_input_event"]
 [connection signal="input_event" from="Sequence Buttons/2/2" to="Sequence Buttons/2/2" method="_on_input_event"]

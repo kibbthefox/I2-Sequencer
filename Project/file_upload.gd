@@ -1,17 +1,27 @@
 extends Button
 
-# I try to use AI as little as possible. unfortunately, I didn't want to spend 10 hours learning all
-# the different types of wav files and how to check them. 95% of the code below is AI. I wish it
-# wasn't, but its what I had to do to finish this project.
 func _process(_delta: float) -> void:
-	if GlobalVariable.page == 0:
+	if GlobalVariable.page == 0 and self.name == "FileUpload":
+		self.visible = true
+	elif GlobalVariable.page == 0 and self.name == "FileUploadDual" and GlobalVariable.mode == "Dual":
 		self.visible = true
 	else:
 		self.visible = false
 
-func _on_pressed() -> void:
-	$"../FileDialog".popup()
 
+func _on_pressed():
+	GlobalVariable.uploadlastpressed = true
+	$"../FileDialog".popup()
+	print("Normal")
+
+func _on_dual_pressed():
+	GlobalVariable.uploadlastpressed = false
+	$"../FileDialog".popup()
+	print("Dual")
+
+# I try to use AI as little as possible. unfortunately, I didn't want to spend 10 hours learning all
+# the different types of wav files and how to check them. 95% of the code below is AI. I wish it
+# wasn't, but its what I had to do to finish this project.
 
 func _on_file_dialog_file_selected(path: String) -> void:
 	var stream := load_audio(path)
@@ -22,8 +32,12 @@ func _on_file_dialog_file_selected(path: String) -> void:
 		return
 
 	if stream:
-		$"../NormalAudio".stream = stream
-		$"../DualAudio".stream = stream
+		if GlobalVariable.uploadlastpressed == true:
+			$"../NormalAudio".stream = stream
+			print("NormalLoad")
+		if GlobalVariable.uploadlastpressed == false:
+			$"../DualAudio".stream = stream
+			print("DualLoad")
 		GlobalVariable.justopened = true
 		GlobalVariable.filetext = path.get_file()
 
